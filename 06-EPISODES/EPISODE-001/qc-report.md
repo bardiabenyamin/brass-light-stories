@@ -1,6 +1,19 @@
 # QC report — EPISODE-001 "The Early Shelf" (Prompt 10)
 
-## v02 (fix pass, 2026-11-09): current
+## v03 (2026-11-09): current
+
+Render: `renders/E001_RENDER_review_v03.mp4` (committed, 86.7 MB) · master `renders/E001_RENDER_master_v03.mp4` (210.6 MB; download only).
+**Status: ROUGH CUT v03 FOR OWNER REVIEW.** Owner notes on v02 fixed:
+
+| v02 note | Fix | Verified | Result |
+|---|---|---|---|
+| Ida's left arm ends in a right hand | Keyframe edit v03: presenting left hand (no upturned thumb) | Zoom on the keyframe + frames 1:02–1:09 | PASS |
+| Departing train slides into the mountain | The train's own (erased) back track rebuilt; the train runs along it and leaves the frame on the right | 12 frames every 0.45 s, 3:05.7–3:11.0 + full-resolution frames | PASS |
+
+Spec (v03): H.264 1920×1080 30 fps · AAC 48 kHz · 4:53.3 · -15.6 LUFS, LRA 7.2, peak -1.3 dBFS · black, freeze and silence only where intended. PASS.
+Owner sign-offs: voices APPROVED; commercial-use rights CONFIRMED. Credits: 0.22 left, none to be bought, so remaining improvements can only be local (free) edits.
+
+## v02 (fix pass, 2026-11-09): superseded by v03
 
 Render: `renders/E001_RENDER_review_v02.mp4` (committed, 86.7 MB) · master `renders/E001_RENDER_master_v02.mp4` (210.7 MB, CRF 16:
 not committed (> 95 MB), delivered as a download; rebuildable with `python3 tools/assemble.py`).

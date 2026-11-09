@@ -1,7 +1,7 @@
 # Dialogue / Voice Script — EPISODE-001
 
 Status: **DONE (generated 2026-11-09).** 33 new voice files + 1 reused from POW-001, all placed in the review render.
-Not yet listened to by a human: **owner audition required** (pronunciation of "Larkspur", "Nora"; Ida and Theo casting).
+**Voices APPROVED by the owner, 2026-11-09** ("Voices are good"): Annie (Wren + narration), Vera (Ida), Archie (Theo).
 
 This is the clean voice-generation script: one line per row with stable IDs, so lines can be regenerated singly
 without disturbing the rest.

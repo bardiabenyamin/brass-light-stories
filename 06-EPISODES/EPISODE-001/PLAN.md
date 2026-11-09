@@ -1,6 +1,6 @@
 # PLAN — EPISODE-001 (and Season 1 production control)
 
-Last updated: 2026-11-09 · Current stage: **Episode 1 ROUGH CUT v02 built and QC'd: NEEDS OWNER REVIEW** (all 8 owner defects from v01 fixed and verified; not final) (Prompts 04 → 10 done tonight; Shorts and YouTube package tomorrow)
+Last updated: 2026-11-09 · Current stage: **Episode 1 ROUGH CUT v03 built and QC'd: owner review** (v02 notes fixed: Ida's hand, train departure. Voices APPROVED, rights CONFIRMED, no further credits)
 
 > **SERIES GATE: APPROVED 2026-11-09.** Proof-of-work: **done** (44.6 credits). **Episode 1 spend: APPROVED** by the owner
 > ("Episode 1 spend cap: as needed but spent wisely", free starter plan) and **spent: 83.58 credits** (balance 97.8 → 14.22).
@@ -190,4 +190,5 @@ and there is one warm practical per scene); the prop-glow rule was clarified (me
 | 2026-11-09 | Prompts 09–10: review render v01 assembled and QC'd (`qc-report.md`); drift and prop-scale defects fixed before delivery | — |
 | 2026-11-09 | **Owner review of v01: 8 defects reported** (arrival train off its track 0:20–0:23; train on the platform 0:43–0:47; Ida with three arms 1:02–1:07; departure train U-turn 3:06–3:11; Theo's mouth not moving 3:20–3:23 and 3:28–3:36; grille wires missing around the whistle 4:22–4:29; constant static). **Spend approval recorded:** owner, 2026-11-09: "Use the remaining balance credits to animate as much as you can. And to perfect the video in every scene." Scope: the remaining Higgsfield balance (14.22 credits). The same 6 generation entries removed from the deny list for this pass | `_backups/settings.json.2026-11-09.bak` |
 | 2026-11-09 | v02 fix pass: 13.5 credits (3 clips + 3 edits; balance 0.72), plus local fixes (grille composites, on-track departure animation, noise beds removed, all dialogue restaged over listeners). Paid tools re-blocked: 35 deny entries in both settings files | `_backups/settings.json.2026-11-09.bak` |
-
+| 2026-11-09 | **Owner review of v02:** "Grandma's 3 arms have been corrected to two, but another problem has occurred. Her left arm and hand seem like it's a right hand on her left hand." · "Departing train just slides into the mountain? Can we make it so it just goes straight following the train tracks?" · **"Voices are good"** (voice casting Annie / Vera / Archie APPROVED) · **"Not buying any more credits"** · commercial-use rights: **"Confirmed"**. One 0.5-credit image edit for the hand, from the remaining 0.72, under the earlier approval "Use the remaining balance credits ... to perfect the video in every scene". `generate_image` and `generate_image_batch` only unblocked for it | `_backups/settings.json.2026-11-09.bak` |
+| 2026-11-09 | v03: Ida's hand (0.5-credit edit) + the departure rebuilt locally along the train's own track; balance 0.22; paid tools re-blocked (35) | `_backups/settings.json.2026-11-09.bak` |

@@ -76,7 +76,7 @@ SC.append(("S02", [
    mus(WARM, 0.5, 42.5, 0.0, -16, 3.0, 3.0)]))
 # S03 office, Monday evening, lamplight
 SC.append(("S03", [
-    still(KF("S03_SH01", "v02"), 7.5, (1.0, 1.08), (0.5, 0.5), fin=0.5),   # v02: Ida has two arms
+    still(KF("S03_SH01", "v03"), 7.5, (1.0, 1.08), (0.5, 0.5), fin=0.5),   # v03: two arms (v02) + a true left hand (owner QC v02)
     still(KF("S03_SH02"), 7.5, (1.15, 1.15), (0.42, 0.5), (0.58, 0.5)),
     still(KF("S03_SH03"), 10.4, (1.0, 1.14), (0.45, 0.5)),     # Wren's "What's that for?" is heard over the ledger
     still(KF("S03_SH04"), 2.0, (1.0, 1.04), (0.6, 0.4)),       # Wren listens: "Mending."
@@ -116,7 +116,7 @@ SC.append(("S06", [
     still(KF("S06_SH01"), 6.5, (1.0, 1.08), (0.5, 0.45), fin=0.8),
     still(KF("S06_SH02"), 7.0, (1.0, 1.06), (0.4, 0.5)),
     still(KF("S06_SH03"), 6.0, (1.0, 1.08), (0.6, 0.4)),
-    clip(EP / "clips/E001_S06_SH04_ANIM_v01.mp4", 0, 5.0, 1.0, crop="1920:1080:0:0"),   # v02: local on-track animation
+    clip(EP / "clips/E001_S06_SH04_ANIM_v02.mp4", 0, 5.0, 1.0, crop="1920:1080:0:0"),   # v03: leaves along its own (restored) track, exits frame right
     xf(KF("S06_SH05", "v02"), KF("S03_SH05"), 9.0, 1.5, 2.0, (1.0, 1.08), (0.5, 0.8), fout=0.6)],   # v02: one shared grille
   [sfx(DRIPS, 0, -6, dur=24.5, fin=1.0, fout=1.5), vo("narr_L018", 0.8), sfx(SFX("train_arrive"), 4.5, -12),
    sfx(SFX("train_depart"), 19.5, -6), vo("narr_L019", 19.8), sfx(SFX("shimmer"), 25.6, -6),
@@ -261,7 +261,7 @@ if __name__ == "__main__":
     save_wav(TMP / "mix_raw.wav", m * 0.8)
     run(["ffmpeg", "-v", "error", "-y", "-i", str(TMP / "mix_raw.wav"), "-af", "loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000", "-ar", "48000", "-c:a", "pcm_s16le", str(TMP / "mix.wav")])
     json.dump({"scenes": marks, "vo": log, "total": total}, open(TMP / "timeline.json", "w"), indent=1)
-    VER = "v02"   # v01 = first review cut (owner QC: 8 defects); v02 = fix pass
+    VER = "v03"   # v01 first cut (8 defects) · v02 fix pass · v03 hand + departure (owner QC v02)
     master = EP / f"renders/E001_RENDER_master_{VER}.mp4"; review = EP / f"renders/E001_RENDER_review_{VER}.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-i", str(TMP / "picture.mp4"), "-i", str(TMP / "mix.wav"), "-map", "0:v:0", "-map", "1:a:0",
          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(master)])

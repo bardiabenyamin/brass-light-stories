@@ -21,7 +21,7 @@ Dialogue is staged over listeners, backs, profiles, or inserts (no lip-sync).
 | S02 | 7 | 0:47.5 | 6.0 | S02_SH07 | CLIP | source 0–3.0 s at 0.5× (motion-interpolated) | `clips/E001_S02_SH07_CLIP_v01.mp4` |
 | S02 | 8 | 0:53.5 | 6.0 | S02_SH08 | CLIP | source 0–3.0 s at 0.5× (motion-interpolated) | `clips/E001_S02_SH08_CLIP_v01.mp4` |
 | S02 | 9 | 0:59.5 | 2.5 | S02_SH03 | STILL + digital move | push 1.60→1.72 at (0.49,0.35) | `images/keyframes/E001_S02_SH03_KF_v02.png` |
-| S03 | 1 | 1:02.0 | 7.5 | S03_SH01 | STILL + digital move | push 1.00→1.08 at (0.50,0.50) | `images/keyframes/E001_S03_SH01_KF_v02.png` |
+| S03 | 1 | 1:02.0 | 7.5 | S03_SH01 | STILL + digital move | push 1.00→1.08 at (0.50,0.50) | `images/keyframes/E001_S03_SH01_KF_v03.png` |
 | S03 | 2 | 1:09.5 | 7.5 | S03_SH02 | STILL + digital move | push 1.15→1.15 at (0.42,0.50), pan 0.42→0.58 | `images/keyframes/E001_S03_SH02_KF_v01.png` |
 | S03 | 3 | 1:17.0 | 10.4 | S03_SH03 | STILL + digital move | push 1.00→1.14 at (0.45,0.50) | `images/keyframes/E001_S03_SH03_KF_v01.png` |
 | S03 | 4 | 1:27.4 | 2.0 | S03_SH04 | STILL + digital move | push 1.00→1.04 at (0.60,0.40) | `images/keyframes/E001_S03_SH04_KF_v01.png` |
@@ -47,7 +47,7 @@ Dialogue is staged over listeners, backs, profiles, or inserts (no lip-sync).
 | S06 | 1 | 2:46.2 | 6.5 | S06_SH01 | STILL + digital move | push 1.00→1.08 at (0.50,0.45) | `images/keyframes/E001_S06_SH01_KF_v01.png` |
 | S06 | 2 | 2:52.7 | 7.0 | S06_SH02 | STILL + digital move | push 1.00→1.06 at (0.40,0.50) | `images/keyframes/E001_S06_SH02_KF_v01.png` |
 | S06 | 3 | 2:59.7 | 6.0 | S06_SH03 | STILL + digital move | push 1.00→1.08 at (0.60,0.40) | `images/keyframes/E001_S06_SH03_KF_v01.png` |
-| S06 | 4 | 3:05.7 | 5.0 | S06_SH04 | CLIP | source 0–5.0 s at 1.0× | `clips/E001_S06_SH04_ANIM_v01.mp4` |
+| S06 | 4 | 3:05.7 | 5.0 | S06_SH04 | CLIP | source 0–5.0 s at 1.0× | `clips/E001_S06_SH04_ANIM_v02.mp4` |
 | S06 | 5 | 3:10.7 | 9.0 | S06_SH05 | STILL x2 + crossfade | crossfade at 1.5 s over 2.0 s; push 1.0→1.08 | `images/keyframes/E001_S06_SH05_KF_v02.png` |
 | S07 | 1 | 3:19.7 | 0.13 | S07_SH01 | CLIP | source 0.0–0.15 s at 1.0× | `clips/E001_S07_SH01_CLIP_v02.mp4` |
 | S07 | 2 | 3:19.8 | 1.4 | S07_SH01 | CLIP | source 0.15–1.95 s at 1.2857× | `clips/E001_S07_SH01_CLIP_v02.mp4` |

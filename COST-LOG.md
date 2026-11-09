@@ -19,8 +19,7 @@ goes in that episode's `assets.md`.
 | ElevenLabs | Not connected | — | — | No integration in this session |
 | YouTube | Not connected | — | — | No integration in this session |
 
-Commercial-use rights for each plan: **NOT VERIFIED**. The owner must confirm in each tool's plan terms before any
-monetized upload.
+Commercial-use rights: **CONFIRMED by the owner, 2026-11-09** ("Confirmed"), for the Higgsfield outputs used in Episode 1 (images, video, seed_audio voices, ElevenLabs music, mirelo SFX).
 
 ## Spend log
 
@@ -39,4 +38,6 @@ monetized upload.
 | 2026-11-09 | EPISODE-001 | local ffmpeg/numpy | Assembly, mix, loudness | E001_RENDER_master/review_v01 | 0 | — | — | — | |
 | 2026-11-09 | EPISODE-001 v02 fixes | Higgsfield | grok_video_v15_lite: 3 clips (Theo talking 3 s + 6 s, Theo watch 3 s); gpt_image_2_6 medium: 3 edits | E001_S07_SH01_CLIP_v02, E001_S07_SH03_CLIP_v01, E001_S02_SH08_CLIP_v01; E001_S03_SH01_KF_v02, E001_S02_SH06_KF_v02, E001_S06_SH04_PLATE_KF_v01 | 13.5 | 0 | — | Owner, 2026-11-09 ("Use the remaining balance credits to animate as much as you can") | Fix pass after owner QC of v01 |
 
-**Running total: 141.68 credits** (POW-001 44.6 + EPISODE-001 83.58 + v02 fixes 13.5). Balance 142.4 → 97.8 → 14.22 → **0.72** (each checked with `balance` and the transaction log). Rate-limited submissions were not charged.
+| 2026-11-09 | EPISODE-001 v03 fix | Higgsfield | gpt_image_2_6 medium: 1 edit (Ida's raised hand → a true left hand) | E001_S03_SH01_KF_v03 | 0.5 | 0 | — | Owner, 2026-11-09 (remaining-balance approval; "Not buying any more credits") | Train fix done locally (free) |
+
+**Running total: 142.18 credits** (POW-001 44.6 + EPISODE-001 83.58 + v02 fixes 13.5 + v03 fix 0.5). Balance 142.4 → 97.8 → 14.22 → 0.72 → **0.22** (each checked with `balance`). The owner is not buying more credits, so **no further paid generation is possible**. Paid tools are blocked (35 deny entries).

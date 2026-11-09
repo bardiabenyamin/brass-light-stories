@@ -165,3 +165,14 @@ Lip-sync alternatives priced and rejected: sync_so lip-sync 10.8 credits for 3 s
 
 Inspection of the new assets: both Theo clips: mouth visibly forms speech shapes; glasses, curls, and coat stable; staircase intact. Watch clip: glasses stay on in every sampled frame. Edits: two arms (zoom-checked); rails under the whole train; the plate is clean. Composites: complete lattice in front of the whistle and the umbrella, pixel-identical to the empty-shelf frame outside the object.
 
+## Fix pass v03 (owner QC of v02, 2026-11-09)
+
+Owner: "Voices are good" · "Not buying any more credits" · rights "Confirmed" · two defects:
+
+| Defect | Cause found | Fix | Credits | Verified |
+|---|---|---|---|---|
+| Ida's raised left arm ends in what reads as a **right hand** (thumb on top) | For a left arm reaching left, palm up and seen from behind, the thumb must point toward the camera (lower edge). v02 had it on top, which is a right hand's configuration | A local mirror attempt detached the hand (rejected). One AI edit with explicit anatomy → `E001_S03_SH01_KF_v03.png` (job `652d2ee5-1eae-4d88-add6-71bce28f721a`) | 0.5 | Zoom: open-palm presenting gesture, no upturned thumb, connected to the left forearm, two arms |
+| Departing train "slides into the mountain" | The keyframe has **two tracks**: the train stands on a back track (rails measured at y = 404 + 0.104(x−1205) and 414 + 0.120(x−1205)); the AI empty plate **erased that track**, so ANIM_v01 slid the train over grass and hid it at a line in front of the hillside | `tools/train_depart.py` v2: the back track is rebuilt on the plate from the real foreground track's rails, sleepers and gravel, squeezed into the measured perspective band (`E001_S06_SH04_PLATE_KF_v02.png`); the train moves along that track's centre line (slope 0.112, slight perspective growth) and **leaves the frame on the right**. No tunnel, no cut line → `E001_S06_SH04_ANIM_v02.mp4` | 0 | 12 frames every 0.45 s in the v03 render + full-resolution frame checks: on the rails throughout, exits right; the restored track reads as real track |
+
+Balance after v03: **0.22** (checked). Paid tools re-blocked (35).
+
