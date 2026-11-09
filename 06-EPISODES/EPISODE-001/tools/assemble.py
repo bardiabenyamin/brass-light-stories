@@ -87,8 +87,8 @@ SC.append(("S04", [
 # S05 kitchen -> hall -> office, Monday midnight (Mom's song; the umbrella arrives; Ida watches)
 SC.append(("S05", [
     still(KF("S05_SH01"), 6.0, (1.0, 1.12), (0.25, 0.45), fin=0.8),
-    clip(CL("S05_SH01"), 0.2, 3.6, 0.4),
-    still(TMP / "S05_SH01_last.png", 4.5, (1.0, 1.06), (0.5, 0.45)),
+    clip(CL("S05_SH01"), 0.2, 2.6, 0.4),   # QC v01: stop before the close-up where the whistle reads as a recorder
+    still(PKF("POW001_SH02_KF_v01"), 7.0, (1.08, 1.0), (0.5, 0.5)),   # the clock face at 11:59 while Mom's song plays; leads into the clip below
     clip(PCL("SH02"), 0, 1.5, crop=GROK, hold=1.5),
     still(KF("S05_SH02", "v02"), 4.0, (1.0, 1.15), (0.55, 0.6)),
     clip(PCL("SH05"), 0, 4.3, crop=POWC),

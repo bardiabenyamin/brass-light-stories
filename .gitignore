@@ -7,3 +7,5 @@
 __pycache__/
 .DS_Store
 **/renders/tmp/
+# Episode masters over 95 MB are delivered as downloads, never committed (CLAUDE.md)
+06-EPISODES/*/renders/*_master_*.mp4

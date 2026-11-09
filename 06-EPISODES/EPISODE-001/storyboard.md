@@ -32,8 +32,8 @@ Dialogue is staged over listeners, backs, profiles, or inserts (no lip-sync).
 | S04 | 3 | 1:49.9 | 5.3 | S04_SH03 | STILL + digital move | push 1.00→1.08 at (0.50,0.40) | `images/keyframes/E001_S04_SH03_KF_v01.png` |
 | S04 | 4 | 1:55.2 | 3.7 | S04_SH02 | STILL + digital move | push 1.15→1.22 at (0.45,0.40) | `images/keyframes/E001_S04_SH02_KF_v01.png` |
 | S05 | 1 | 1:58.9 | 6.0 | S05_SH01 | STILL + digital move | push 1.00→1.12 at (0.25,0.45) | `images/keyframes/E001_S05_SH01_KF_v01.png` |
-| S05 | 2 | 2:04.9 | 8.5 | S05_SH01 | CLIP | source 0.2–3.6 s at 0.4× (motion-interpolated) | `clips/E001_S05_SH01_CLIP_v01.mp4` |
-| S05 | 3 | 2:13.4 | 4.5 | S05_SH01 | STILL + digital move | push 1.00→1.06 at (0.50,0.45) | `renders/tmp/S05_SH01_last.png` |
+| S05 | 2 | 2:04.9 | 6.0 | S05_SH01 | CLIP | source 0.2–2.6 s at 0.4× (motion-interpolated) | `clips/E001_S05_SH01_CLIP_v01.mp4` |
+| S05 | 3 | 2:10.9 | 7.0 | POW001_SH02_KF_v01 (POW-001 reuse) | STILL + digital move | push 1.08→1.00 at (0.50,0.50) | `../../04-TESTS/POW-001/keyframes/POW001_SH02_KF_v01.png` |
 | S05 | 4 | 2:17.9 | 3.0 | POW001_SH02_CLIP_v01 (POW-001 reuse) | CLIP | source 0–1.5 s at 1.0× + 1.5 s hold | `../../04-TESTS/POW-001/clips/POW001_SH02_CLIP_v01.mp4` |
 | S05 | 5 | 2:20.9 | 4.0 | S05_SH02 | STILL + digital move | push 1.00→1.15 at (0.55,0.60) | `images/keyframes/E001_S05_SH02_KF_v02.png` |
 | S05 | 6 | 2:24.9 | 4.3 | POW001_SH05_CLIP_v01 (POW-001 reuse) | CLIP | source 0–4.3 s at 1.0× | `../../04-TESTS/POW-001/clips/POW001_SH05_CLIP_v01.mp4` |

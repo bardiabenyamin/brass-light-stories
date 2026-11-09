@@ -1,6 +1,6 @@
 # PLAN — EPISODE-001 (and Season 1 production control)
 
-Last updated: 2026-11-09 · Current stage: **Episode 1 review render v01 built: owner review** (Prompts 04 → 10 done tonight; Shorts and YouTube package tomorrow)
+Last updated: 2026-11-09 · Current stage: **Episode 1 review render v01 PASSED QC: NEEDS OWNER REVIEW** (Prompts 04 → 10 done tonight; Shorts and YouTube package tomorrow)
 
 > **SERIES GATE: APPROVED 2026-11-09.** Proof-of-work: **done** (44.6 credits). **Episode 1 spend: APPROVED** by the owner
 > ("Episode 1 spend cap: as needed but spent wisely", free starter plan) and **spent: 83.58 credits** (balance 97.8 → 14.22).
@@ -134,8 +134,8 @@ and there is one warm practical per scene); the prop-glow rule was clarified (me
 | 06 | Character and scene images | `prompts.md`, `references/`, `images/keyframes/`, `assets.md` | **Yes** (22.0) | **DONE**: 39 images, each inspected on contact sheets and zooms (run log); 2 failed and were fixed by edits. Theo front ref `PROPOSED — NEEDS APPROVAL` as canon |
 | 07 | Animation clips | `animation-batch.md`, `clips/` | **Yes** (31.0) | **DONE**: 9 clips, frame-sampled at start, mid, end; 2 trimmed (dust puffs; prop growth) |
 | 08 | Dialogue, music, SFX | `audio-cue-sheet.md`, `dialogue.md`, `audio/` | **Yes** (30.58) | **DONE (generated + measured)**: 33 voice jobs, 2 music beds, 2 SFX, local synth (Mom's song, bell, shimmer, drips, room tone). **Not listened to by a human: owner audition required** |
-| 09 | Assembly | `tools/assemble.py` (ffmpeg + numpy; Remotion not needed), `renders/E001_RENDER_review_v01.mp4` | No (local) | See `qc-report.md` |
-| 10 | QC and final render | `qc-report.md`, final render verified with ffprobe | Maybe (fixes) | See `qc-report.md`; 14.22 credits left for fixes |
+| 09 | Assembly | `tools/assemble.py` (ffmpeg + numpy; Remotion not needed), `renders/E001_RENDER_review_v01.mp4` | No (local) | **DONE**: review copy 86.8 MB committed; master 211 MB delivered as a download (git-ignored), rebuildable from the repo |
+| 10 | QC and final render | `qc-report.md`, final render verified with ffprobe | Maybe (fixes) | **DONE for review**: spec PASS (1920×1080/30/H.264/AAC 48 kHz, 4:53.4, -15.7 LUFS); 2 defects fixed in QC; **owner listen-through and approval NEEDED** before "final" |
 | 11 | Shorts | `shorts-plan.md`, `shorts/` | Maybe | PENDING (tomorrow, per owner) |
 | 12 | YouTube package | `youtube.md` (no upload without explicit authorization) | No | PENDING (tomorrow, per owner) |
 | 13 | Next episode | `EPISODE-002/` copied from the template, concept, cliffhanger plan, ledger | No | BLOCKED |
@@ -187,4 +187,4 @@ and there is one warm practical per scene); the prop-glow rule was clarified (me
 | 2026-11-09 | Episode 1 fast-track start: the same 6 generation entries removed from the deny list (29 remain) under the owner's Episode 1 spend approval | `_backups/settings.json.2026-11-09.bak` (35 entries) |
 | 2026-11-09 | Prompts 04–08: script, storyboard (EDL), dialogue, scenes, cliffhanger plan, 39 images, 9 clips, 33 voice jobs, 2 music beds, 2 SFX. **83.58 credits** (exact, from the transaction log; balance 14.22) | Approved ledger: `02-SERIES/_backups/cliffhanger-ledger.md.2026-11-09.bak`; `continuity.md` and `PLAN.md` copies in `_backups/` |
 | 2026-11-09 | Paid tools re-blocked after generation: deny list restored to 35 entries in both settings files | `_backups/settings.json.2026-11-09.bak` |
-
+| 2026-11-09 | Prompts 09–10: review render v01 assembled and QC'd (`qc-report.md`); drift and prop-scale defects fixed before delivery | — |

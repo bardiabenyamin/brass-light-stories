@@ -13,7 +13,7 @@ res = {"file": str(render.name), "size_MB": round(int(probe["format"]["size"]) /
 lo = subprocess.run(["ffmpeg", "-i", str(render), "-map", "0:a:0", "-af", "ebur128=peak=true:framelog=quiet", "-f", "null", "-"], capture_output=True, text=True).stderr
 res["loudness"] = " ".join(l.strip() for l in lo.splitlines() if l.strip().startswith(("I:", "LRA:", "Peak:")))
 bd = subprocess.run(["ffmpeg", "-i", str(render), "-map", "0:v:0", "-vf", "blackdetect=d=0.4:pix_th=0.06", "-an", "-f", "null", "-"], capture_output=True, text=True).stderr
-res["black_segments"] = [l.split("blackdetect] ")[1] for l in bd.splitlines() if "black_start" in l]
+res["black_segments"] = [l.split("] ", 1)[1] for l in bd.splitlines() if "black_start" in l]
 fz = subprocess.run(["ffmpeg", "-i", str(render), "-map", "0:v:0", "-vf", "freezedetect=n=0.0008:d=2.5", "-an", "-f", "null", "-"], capture_output=True, text=True).stderr
 res["freezes"] = [l.split("] ")[1] for l in fz.splitlines() if "freeze_start" in l or "freeze_duration" in l]
 sl = subprocess.run(["ffmpeg", "-i", str(render), "-map", "0:a:0", "-af", "silencedetect=n=-50dB:d=1.5", "-f", "null", "-"], capture_output=True, text=True).stderr
