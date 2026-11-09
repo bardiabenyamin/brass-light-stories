@@ -1,0 +1,181 @@
+# PLAN — EPISODE-001 (and Season 1 production control)
+
+Last updated: 2026-11-09 · Current stage: **T1 proof-of-work DONE → waiting on owner decisions (canon refs, voice, Episode 1 budget); next text stage is Prompt 04**
+
+> **SERIES GATE: APPROVED 2026-11-09.** The proof-of-work is **done**: 44.6 credits, under the about-70 ceiling.
+> **Full-episode asset spend (Prompts 06–08) is NOT approved.** The paid tools are blocked again. Estimate for
+> Episode 1: about 405–495 credits (`04-TESTS/POW-001/report.md` §3); the balance is 97.8.
+
+Status values: `DONE` (exists **and** checked; the "Checked how" column says how) · `PENDING` · `BLOCKED` ·
+`NEEDS APPROVAL`
+
+---
+
+## Production gate
+
+| Requirement | Status |
+|---|---|
+| Channel identity approved (audience, genre, tone, boundaries); see `01-CHANNEL/channel-guide.md` | **APPROVED** 2026-11-09: Option A confirmed |
+| Channel name chosen | **APPROVED** 2026-11-09: **Brass Light Stories** (handle `@BrassLightStories`, showing no public channel at the 2026-11-09 check; claim it in YouTube Studio) |
+| Format decision: serialized or anthology, with reasons | **APPROVED**: serialized; `02-SERIES/concept-options.md` |
+| Series bible: premise, cast, arcs, season question and answer, opposing force, world rules | **APPROVED**: `02-SERIES/series-bible.md` |
+| Six-episode roadmap showing cause and effect from episode to episode | **APPROVED**: `02-SERIES/six-episode-roadmap.md` |
+| Cliffhanger chain 1→2…5→6, none abandoned, types rotated | **APPROVED**: roadmap Part D and `cliffhanger-ledger.md` |
+| Feasibility: reuse plan, risky shots, per-episode counts | **APPROVED**: roadmap Part E |
+| Roadmap passes the acceptance test in `02-SERIES/README.md` | DONE: 12/12 |
+| Roadmap and Episode 1 concept presented to the owner | DONE: chat summary 2026-11-09 |
+| **Owner's explicit approval recorded below** | **APPROVED 2026-11-09** |
+| Spend approval for the proof-of-work test | **APPROVED and USED:** 44.6 credits (2026-11-09) |
+| Spend approval for full Episode 1 assets (Prompts 06–08) | **NEEDS APPROVAL**: estimate about 405–495 credits (report §3); balance 97.8, so a top-up or bigger plan is needed |
+
+**Gate approval record** (owner's own words, 2026-11-09):
+
+| Date | What was approved | Owner quote |
+|---|---|---|
+| 2026-11-09 | Channel identity | "Channel identity: Option A confirmed." |
+| 2026-11-09 | Six-episode roadmap and Episode 1 concept, unchanged | "Series approved: The Early Shelf roadmap and Episode 1 concept, as written." |
+| 2026-11-09 | Channel name | "Channel name: Brass Light Stories." |
+| 2026-11-09 | Proof-of-work spend, after Prompt 03 | "Proof-of-work cap: use as needed credits, approved to spend after Prompt 03." |
+| 2026-11-09 | Scope of the next step | "run Prompt 02 (character bible) … Text and prompts only, no image generation yet." |
+
+**Working ceiling for the proof-of-work (`PROPOSED`; the owner may override):** before submitting anything, Claude
+reads the tool's own price quote. If the whole test would cost more than about half the current balance (about 70 of
+142.4 credits), Claude pauses and reports instead of spending. Each failed shot is retried at most twice.
+
+**Hard stop:** `.claude/settings.json` still denies all 35 paid Higgsfield tools. When the proof-of-work starts
+(after Prompt 03), remove **only** the entries the test needs (image, video, and audio generation) and log the
+change below. Publishing tools stay denied.
+
+---
+
+## Stage checklist
+
+### Stage 00 — Setup (Prompt 00): DONE except the owner decisions
+
+| # | Item | Status | Checked how |
+|---|---|---|---|
+| 00.1 | Workspace audit | DONE | `find /home/user`: the folder was empty. The only input was the uploaded prompt book (19 pages, all read). No channel guide, brand files, templates, prior episodes, or assets existed |
+| 00.2 | Prompt book stored in project | DONE | `00-SOURCE/prompt-book-series-first-edition.pdf`. sha256 `faa8958a…a0ec` matches the upload |
+| 00.3 | Channel identity documented (specified vs proposed) | DONE (file) · NEEDS APPROVAL (content) | `01-CHANNEL/channel-guide.md` written and reviewed |
+| 00.4 | Folder structure `00-SOURCE`…`06-EPISODES` | DONE | `find -type d` listing |
+| 00.5 | `06-EPISODES/EPISODE-001/` created | DONE | Folder did not exist before, so nothing was overwritten |
+| 00.6 | 11 episode files created | DONE | Each file exists and is non-empty (`[ -s ]`); `story-settings.json` parses (python `json.load`, `gate.status=BLOCKED`) |
+| 00.7 | Media folders: `references/{characters,locations,props}`, `images/keyframes`, `clips`, `audio/{dialogue,music,sfx}`, `renders`, `shorts`, `_backups` | DONE | `[ -d ]` check on all 11 |
+| 00.8 | Episode template `06-EPISODES/_EPISODE-TEMPLATE/` | DONE | Generated from the EPISODE-001 skeleton. `grep` finds 0 leftover E001 references; template JSON is valid |
+| 00.9 | `CLAUDE.md` production rules and series-first gate (auto-loaded each session) | DONE | File written; contains the gate, autonomy rules, file map, naming |
+| 00.10 | Hard stop on paid tools (`.claude/settings.json` deny list) | DONE | `jq` parses the file (35 rules). The 35 denied Higgsfield tools dropped out of this session's toolset immediately after it was written |
+| 00.11 | Tool availability audit | DONE | Higgsfield: connected, starter plan, 142.4 credits (read-only `balance` call, 0 spent). ElevenLabs: not connected. YouTube: not connected. Remotion: not installed (Node v22.23.4 and ffmpeg 6.1.1 present) |
+| 00.12 | Cost log started | DONE | `COST-LOG.md`, 0 credits spent |
+| 00.13 | No assets generated or published | DONE | `find` for png/jpg/webp/mp4/mov/wav/mp3 under the project returns 0 |
+| 00.14 | Owner confirms channel identity (Option A/B/C or other) | DONE | "Channel identity: Option A confirmed." (2026-11-09), logged in `channel-guide.md` §5 |
+| 00.15 | Owner supplies channel name, or asks for name options | DONE | "Brass Light Stories". Handle `@BrassLightStories` (case-insensitive) returned 404 on 2026-11-09 |
+| 00.16 | Owner sets credit caps (test and per episode) | PARTIAL | Test approved "as needed" after Prompt 03 (working ceiling above). Per-episode cap still to come after the test |
+
+### Stage 01 — Six-episode series roadmap (Prompt 01): DONE and APPROVED 2026-11-09
+
+| # | Deliverable | Status | Checked how |
+|---|---|---|---|
+| 01.1 | `02-SERIES/concept-options.md` | DONE (draft) | 3 concepts scored; serialized format chosen; Part F trade-offs written; file reviewed |
+| 01.2 | `02-SERIES/series-bible.md` | DONE (draft) | R1–R10, cast ×6, season Q and answer, K1–K11. The logic pass refined R5 (change log) |
+| 01.3 | `02-SERIES/six-episode-roadmap.md` | DONE (draft) | The script confirms all Part C fields ×6, chain rows ×5, and no back-to-back type repeats |
+| 01.4 | `02-SERIES/cliffhanger-ledger.md` seeded with the planned chain | DONE | The script confirms 6 entries × 14 fields and opening answers matching the next payoff (one wording fix applied) |
+| 01.5 | `STORY-BIBLE.md` and this PLAN updated | DONE | STORY-BIBLE §1–4 filled (PROPOSED); `story-settings.json` updated and parses |
+| 01.6 | Roadmap acceptance test passed (`02-SERIES/README.md`) | DONE | 11/11 checked; method recorded in the README |
+| 01.7 | Approval summary of the roadmap and Episode 1 concept presented, then STOP | DONE | Chat 2026-11-09. Stopped; no Prompt 02 work started |
+| 01.8 | **Owner approval** of identity, series, roadmap, and Episode 1 concept | DONE | Explicit approval quoted in the gate record above. Approved series files snapshotted to `02-SERIES/_backups/*.2026-11-09.approved.bak` |
+
+### Stage 02 — Character bible (Prompt 02): DONE (text and prompts only; images PENDING by owner instruction)
+
+| # | Deliverable | Status | Checked how |
+|---|---|---|---|
+| 02.1 | `characters.md`: 6 full bibles (Wren, Ida, Theo, Crane, Abe, Ledger) plus the photo variants (young Ida, teen Ansel, child Nora) and extras (passenger, crew) | DONE | A script confirmed every Prompt 02 field per character (silhouette … voice direction, "Never changes", expressions, prompt, negative) |
+| 02.2 | Original character prompt and negative prompt per character | DONE | Each character's never-change locks appear in its prompt block (script). No studio, franchise, or artist names (regex scan: 0 hits) |
+| 02.3 | Front, side, ¾, full-body, and expression-sheet requirements, with filenames | DONE | 32 copy-ready prompts in `prompts.md` CR-01 to CR-32, built from `characters.md` (single source). All 32 filenames match the naming rule; each has a prompt and a negative |
+| 02.4 | Continuity checklist for every image and clip | DONE | `continuity.md` §A (generic) + §A2 per-character locks (8 rows), wardrobe states, prop states, left/right facts |
+| 02.5 | `references/characters/README.md` | DONE | Lists all 32 files as PENDING; states "0 of 32 images exist"; approval procedure |
+| 02.6 | `assets.md` planned rows | DONE | 32 PLANNED rows, 0 credits |
+| 02.7 | Voice direction with no real-actor imitation | DONE | Every speaking character's voice is marked "an original voice" |
+| 02.8 | Images generated and verified | **PENDING** | Owner: "no image generation yet". Deny list still active. Nothing generated; `find` shows 0 media files |
+| 02.9 | Character designs approved as canon | **PENDING** | Becomes canon when the reference images are approved (after Prompt 03 + proof-of-work) |
+
+Canon note: one inconsistency found and fixed in the character files, not the approved canon. Ida's key hangs on her
+bedside hook while she sleeps, as the approved Ep4 roadmap requires (Wren takes it from the hook).
+
+### Stage 03 — Art direction and world (Prompt 03): DONE (locked v1)
+
+| # | Deliverable | Status | Checked how |
+|---|---|---|---|
+| 03.1 | `03-ART-DIRECTION/visual-style.md`: visual language, palette, lighting states, camera, movement, mood progression, continuity rules | DONE | A script confirms all 18 Prompt 03 topics are present |
+| 03.2 | Master style prompt and master negative prompt (plus location and video add-ons) | DONE (locked) | The negative covers anatomy, face drift, extra limbs, text, flicker, morphing, logos, and inconsistent props (script) |
+| 03.3 | `03-ART-DIRECTION/locations.md`: 4 core locations, geography map, masters and screen direction, set states, a base prompt each, 13 state blocks | DONE | Every state maps to a locked lighting state (script). Consistent with series-bible §2 (tunnel at the platform's end; kitchen view of the clock's back via an interior window) |
+| 03.4 | `03-ART-DIRECTION/props.md`: 24-prop register with states, 20 prompt blocks | DONE | The register covers every story prop in the approved roadmap (script) |
+| 03.5 | `prompts.md` rebuilt on the locked style: 32 character, 17 location, and 20 prop references | DONE | 69 entries; the locked style appears 70 times; no provisional text left; single-source builder `03-ART-DIRECTION/build_prompts.py` |
+| 03.6 | `continuity.md`: §A3 location, prop, and style checks; season timeline (time, weather, lighting for every scene); screen direction; prop register | DONE | Sections present (script) |
+| 03.7 | Originality | DONE | No studio, franchise, artist, or film names in any art-direction or prompt file (regex scan) |
+| 03.8 | A small style test | → T1 | Folded into the approved proof-of-work instead of a separate spend |
+
+Two fixes made during the check: the platform-midnight office window is now dark (the office is unlit at midnight,
+and there is one warm practical per scene); the prop-glow rule was clarified (memory-objects glow permanently).
+
+### Next stages (series gate open; proof-of-work running)
+
+| # | Stage (prompt) | Deliverables | Paid? | Status |
+|---|---|---|---|---|
+| 02 | Character bible | `characters.md`, `continuity.md`, `references/characters/README.md` (prompts only) | No | DONE (text); images PENDING |
+| 03 | Art direction and world | `03-ART-DIRECTION/visual-style.md`, `locations.md`, `props.md`, master and negative prompts | No | DONE (locked v1) |
+| T1 | Proof-of-work test (30–60 s) | `04-TESTS/POW-001/`: render, report, run log | **Yes** (44.6 credits) | **DONE**: render verified (ffprobe 1920×1080/30/H.264/48 kHz, 30.0 s, −16.4 LUFS; frame check). Every asset inspected against continuity §A/§A2/§A3 (run log) |
+| 04 | Script and storyboard | `script.md`, `dialogue.md`, `scenes.md`, `storyboard.md`, `continuity.md` | No | PENDING |
+| 05 | Cliffhanger chain audit | `cliffhanger-plan.md`, ledger entry | No | PENDING |
+| 06 | Character and scene images | `prompts.md`, `references/`, `images/keyframes/`, `assets.md` | **Yes** | BLOCKED (spend not yet approved). 3 refs already VERIFIED in POW-001, awaiting canon approval |
+| 07 | Animation clips | `animation-batch.md`, `clips/` | **Yes** | BLOCKED (spend not yet approved) |
+| 08 | Dialogue, music, SFX | `audio-cue-sheet.md`, `dialogue.md`, `audio/` | **Yes** | BLOCKED (spend not yet approved) |
+| 09 | Remotion assembly | `05-EDIT/` project, `renders/E001_RENDER_review_v01.mp4` | No (local) | BLOCKED |
+| 10 | QC and final render | `qc-report.md`, final render verified with ffprobe | Maybe (fixes) | BLOCKED |
+| 11 | Shorts | `shorts-plan.md`, `shorts/` | Maybe | BLOCKED |
+| 12 | YouTube package | `youtube.md` (no upload without explicit authorization) | No | BLOCKED |
+| 13 | Next episode | `EPISODE-002/` copied from the template, concept, cliffhanger plan, ledger | No | BLOCKED |
+
+---
+
+## Decisions made at setup (reversible)
+
+| Decision | Label |
+|---|---|
+| Numbered top-level folders `00-SOURCE`…`05-EDIT` to match the given `06-EPISODES` convention | Reversible; my convention |
+| Series-level canon in `02-SERIES/`, art direction in `03-ART-DIRECTION/`, tests in `04-TESTS/`, one reusable Remotion project in `05-EDIT/` | Reversible |
+| EPISODE-001 character and location references become the series canon; later episodes reuse them by path | Reversible |
+| Asset naming `E{ep}_{TYPE}_{detail}_v{nn}.{ext}`; backups `_backups/<file>.<date>.bak` | Reversible |
+| Paid Higgsfield tools denied in project settings until approval | Reversible (edit `.claude/settings.json`) |
+| Channel identity Option A: serialized speculative mystery, 13+, about PG, not made for kids | **APPROVED** 2026-11-09 |
+| Series *The Early Shelf*: premise, cast, world rules R1–R10, 6-episode roadmap | **APPROVED** 2026-11-09 |
+| Channel name: Brass Light Stories (owner's choice; Small Hours Stories was dropped because its handle is taken) | **APPROVED** 2026-11-09 |
+| Content boundaries in `channel-guide.md` §3 | **APPROVED** with Option A |
+| English language | **PROPOSED — NEEDS APPROVAL** |
+| Narration-led storytelling with limited lip-sync | **APPROVED** with the roadmap (Part E) |
+| Cast of 2–3 core plus ≤2 supporting per episode; 3–4 core locations | **APPROVED** with the roadmap |
+
+## Missing inputs
+
+1. ~~Channel identity confirmation~~: approved 2026-11-09.
+2. **Claim the handle** `@BrassLightStories` in YouTube Studio (owner action; only Studio can confirm it). Trademark and domain are not checked.
+3. **Budget:** the proof-of-work is approved "as needed" after Prompt 03; the per-episode cap comes after the test. Current balance is 142.4 Higgsfield credits on
+   the starter plan. Per-clip cost has not been measured yet, and a full 5-minute episode is likely to need far more
+   than that balance (estimate after the test).
+4. **Commercial-use rights** for the Higgsfield starter plan and any voice or music source: not verified.
+5. **Voice provider:** ElevenLabs is not connected. Options are connecting it, Higgsfield audio (once rights are
+   verified), or a manual handoff.
+6. **Brand kit:** logo, banner, fonts (see `01-CHANNEL/brand/README.md`).
+7. **Persistence:** this cloud workspace is **not a git repository**, and the container is temporary. Commit it to a
+   repository or download it, or the setup will be lost.
+
+## Change log
+
+| Date | Change | Backup |
+|---|---|---|
+| 2026-11-09 | Prompt 00 setup: workspace, files, template, gate, deny list | None needed (nothing existed) |
+| 2026-11-09 | Prompt 01: wrote `concept-options.md`, `series-bible.md`, `six-episode-roadmap.md`; seeded the ledger; updated STORY-BIBLE, story-settings, channel-guide §4–5, series README | None needed (no approved content was changed) |
+| 2026-11-09 | Owner approval recorded (identity A, series and Ep1 concept, channel name, proof-of-work spend after Prompt 03). Series files marked APPROVED | Snapshots: `02-SERIES/_backups/*.2026-11-09.approved.bak` |
+| 2026-11-09 | Prompt 02: `characters.md`, `prompts.md` character batch (CR-01 to CR-32), `continuity.md` §A2 and canon tables, `references/characters/README.md`, `assets.md` planned rows | None needed (all were unapproved templates) |
+| 2026-11-09 | Prompt 03: `visual-style.md`, `locations.md`, `props.md`, `build_prompts.py`; prompts.md rebuilt (69 references); continuity §A3, timeline, screen direction, props; W2/I2 night blocks added to characters.md | None needed (no approved files changed) |
+| 2026-11-09 | Proof-of-work start: removed 6 deny entries (Higgsfield `generate_image`, `generate_video`, `generate_audio` and their `_batch` forms). **29 stay denied** (publishing, voice creation, upscale, presets, etc.) | `_backups/settings.json.2026-11-09.bak` |
+| 2026-11-09 | POW-001 complete (44.6 credits). **Deny list restored to all 35 entries** right after the run; full-episode spend is not approved | Restored from `_backups/settings.json.2026-11-09.bak` |

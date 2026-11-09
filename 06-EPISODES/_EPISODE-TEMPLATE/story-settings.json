@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "updated": null,
+  "updated_by_stage": "TEMPLATE: copy to EPISODE-NNN and fill in",
+  "channel": {
+    "name": null,
+    "name_status": "MISSING \u2014 NEEDS OWNER INPUT",
+    "identity_option": "A",
+    "identity_status": "PROPOSED \u2014 NEEDS APPROVAL",
+    "audience": "General audience 13+ (teens and adults); not made for kids",
+    "genre": "Serialized speculative mystery-adventure",
+    "tone": "Wonder with an undercurrent of unease; warm, earnest characters; light humor; mild peril",
+    "content_rating": "PG (approx.)",
+    "language": "en",
+    "storytelling_mode": "Narration-led with selective on-screen dialogue",
+    "guide": "01-CHANNEL/channel-guide.md"
+  },
+  "series": {
+    "format": "serialized",
+    "format_status": "PROPOSED \u2014 NEEDS APPROVAL (final decision in Prompt 01 Part A)",
+    "season": 1,
+    "episodes_planned": 6,
+    "central_question": null,
+    "roadmap_file": "02-SERIES/six-episode-roadmap.md",
+    "roadmap_status": "NOT STARTED",
+    "cast_target": {
+      "core_recurring": "2-3",
+      "supporting_per_episode_max": 2
+    },
+    "location_target": {
+      "core_recurring": "3-4",
+      "new_per_episode_max": 1
+    }
+  },
+  "episode": {
+    "id": "EPISODE-XXX",
+    "number": null,
+    "working_title": null,
+    "concept_status": "NOT STARTED",
+    "target_runtime_seconds": 300,
+    "spoken_words": {
+      "min": 650,
+      "max": 750,
+      "pad": false
+    },
+    "hook_deadline_seconds": 10
+  },
+  "video": {
+    "aspect": "16:9",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "container": "mp4",
+    "video_codec": "h264",
+    "audio_sample_rate_hz": 48000
+  },
+  "shorts": {
+    "aspect": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "min_seconds": 20,
+    "max_seconds": 45,
+    "per_episode": "2-3"
+  },
+  "visual_direction": "Original cinematic stylized 3D animation; no imitation of named studios, artists, franchises, or films",
+  "gate": {
+    "status": "INHERITS SERIES GATE",
+    "statement": "Paid assets for this episode need the approved season roadmap and an approved episode concept",
+    "series_gate_source": "06-EPISODES/EPISODE-001/story-settings.json -> gate",
+    "episode_concept_approved_on": null
+  },
+  "tools": {
+    "note": "Re-verify tool availability at the start of each episode; do not copy prior results"
+  },
+  "budget": {
+    "proof_of_work_credit_cap": null,
+    "per_episode_credit_cap": null,
+    "status": "MISSING \u2014 NEEDS OWNER INPUT",
+    "max_retries_without_approval": 2
+  },
+  "naming": {
+    "pattern": "E{ep}_{TYPE}_{detail}_v{nn}.{ext}",
+    "episode_prefix": "EXXX"
+  }
+}

@@ -1,0 +1,8 @@
+# Intermediates and scratch (rebuilt by scripts; never canon)
+**/render/tmp/
+04-TESTS/POW-001/frames/R_*.png
+04-TESTS/POW-001/frames/*_t*.png
+04-TESTS/POW-001/frames/*_z*.png
+*.raw
+__pycache__/
+.DS_Store

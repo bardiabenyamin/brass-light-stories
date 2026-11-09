@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-09",
+  "updated_by_stage": "Owner approval recorded; Prompt 02 in progress",
+  "channel": {
+    "name": "Brass Light Stories",
+    "name_status": "APPROVED 2026-11-09 — handle not yet claimed (owner action in YouTube Studio)",
+    "identity_option": "A",
+    "identity_status": "APPROVED 2026-11-09 (Option A confirmed)",
+    "audience": "General audience 13+ (teens and adults); not made for kids",
+    "genre": "Serialized speculative mystery-adventure",
+    "tone": "Wonder with an undercurrent of unease; warm, earnest characters; light humor; mild peril",
+    "content_rating": "PG (approx.)",
+    "language": "en",
+    "storytelling_mode": "Narration-led with selective on-screen dialogue",
+    "guide": "01-CHANNEL/channel-guide.md",
+    "handle_check": {
+      "date": "2026-11-09",
+      "method": "youtube.com/@handle HTTP status + channel search",
+      "free_public": [
+        "@EarlyShelfStudio",
+        "@TheEarlyShelf",
+        "@BrasslightStories"
+      ],
+      "taken": [
+        "@SmallHoursStories",
+        "@LamplitTales",
+        "@TheOddHour",
+        "@OddHour"
+      ],
+      "note": "404 is not a guarantee; confirm in YouTube Studio. Trademark/domain not checked."
+    },
+    "handle": "@BrassLightStories"
+  },
+  "series": {
+    "format": "serialized",
+    "format_status": "APPROVED 2026-11-09",
+    "season": 1,
+    "episodes_planned": 6,
+    "central_question": "What does the Early Shelf take in return for a second chance — and who has been paying?",
+    "roadmap_file": "02-SERIES/six-episode-roadmap.md",
+    "roadmap_status": "APPROVED 2026-11-09",
+    "cast_target": {
+      "core_recurring": "2-3",
+      "supporting_per_episode_max": 2
+    },
+    "location_target": {
+      "core_recurring": "3-4",
+      "new_per_episode_max": 1
+    },
+    "title": "The Early Shelf",
+    "title_status": "APPROVED 2026-11-09",
+    "bible_file": "02-SERIES/series-bible.md",
+    "ledger_file": "02-SERIES/cliffhanger-ledger.md",
+    "core_cast": [
+      "CHR_WREN",
+      "CHR_IDA",
+      "CHR_THEO"
+    ],
+    "supporting_cast": [
+      "CHR_CRANE",
+      "CHR_ABE"
+    ],
+    "optional_cast": [
+      "CHR_LEDGER"
+    ],
+    "core_locations": [
+      "LOC_OFFICE",
+      "LOC_PLATFORM",
+      "LOC_CLOCKROOM",
+      "LOC_KITCHEN"
+    ]
+  },
+  "episode": {
+    "id": "EPISODE-001",
+    "number": 1,
+    "working_title": "The Early Shelf",
+    "concept_status": "APPROVED 2026-11-09",
+    "target_runtime_seconds": 300,
+    "spoken_words": {
+      "min": 650,
+      "max": 750,
+      "pad": false
+    },
+    "hook_deadline_seconds": 10,
+    "cliffhanger_type": "impossible evidence",
+    "speaking_characters": [
+      "CHR_WREN",
+      "CHR_IDA",
+      "CHR_THEO"
+    ],
+    "locations": [
+      "LOC_PLATFORM",
+      "LOC_OFFICE",
+      "LOC_KITCHEN"
+    ],
+    "rules_shown": [
+      "R1",
+      "R2"
+    ],
+    "est_keyframes": "35-40",
+    "est_clips": "50-60"
+  },
+  "video": {
+    "aspect": "16:9",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "container": "mp4",
+    "video_codec": "h264",
+    "audio_sample_rate_hz": 48000
+  },
+  "shorts": {
+    "aspect": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "min_seconds": 20,
+    "max_seconds": 45,
+    "per_episode": "2-3"
+  },
+  "visual_direction": "Original cinematic stylized 3D animation; no imitation of named studios, artists, franchises, or films",
+  "gate": {
+    "status": "APPROVED",
+    "statement": "SERIES GATE APPROVED — generation on hold until Prompt 03 complete (owner instruction)",
+    "requires": [
+      "Channel identity confirmed — DONE",
+      "Roadmap passes acceptance test — DONE",
+      "Episode 1 concept presented — DONE",
+      "Owner approval recorded in PLAN.md — DONE 2026-11-09"
+    ],
+    "approved_by": "owner",
+    "approved_on": "2026-11-09",
+    "approval_quote": "Series approved: The Early Shelf roadmap and Episode 1 concept, as written.",
+    "hard_stop": ".claude/settings.json permissions.deny lists paid Higgsfield generation and publishing tools",
+    "generation_hold": "No image/video/audio generation until Prompt 03 is complete (owner: 'Text and prompts only, no image generation yet.')"
+  },
+  "tools": {
+    "higgsfield": {
+      "connected": true,
+      "verified_on": "2026-11-09",
+      "verified_by": "read-only balance call",
+      "plan": "starter",
+      "credits_at_check": 142.4,
+      "commercial_rights_verified": false,
+      "use_permitted": "after Prompt 03 — proof-of-work only"
+    },
+    "elevenlabs": {
+      "connected": false
+    },
+    "youtube": {
+      "connected": false,
+      "upload_permitted": false
+    },
+    "remotion": {
+      "installed": false,
+      "node": "v22.23.4",
+      "ffmpeg": "6.1.1"
+    }
+  },
+  "budget": {
+    "proof_of_work_credit_cap": "as needed (owner, 2026-11-09)",
+    "per_episode_credit_cap": null,
+    "status": "Proof-of-work approved after Prompt 03; per-episode cap pending (estimate after test)",
+    "max_retries_without_approval": 2,
+    "proof_of_work_working_ceiling": "PROPOSED: pause and report if test would exceed ~70 credits (~half of 142.4 balance)",
+    "proof_of_work_effective": "after Prompt 03"
+  },
+  "naming": {
+    "pattern": "E{ep}_{TYPE}_{detail}_v{nn}.{ext}",
+    "episode_prefix": "E001"
+  }
+}
