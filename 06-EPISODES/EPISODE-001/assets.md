@@ -196,3 +196,24 @@ A row may say GENERATED, VERIFIED, or APPROVED only if the file exists at the li
 | E001_SFX_train_arrive_v01 | `audio/sfx/E001_SFX_train_arrive_v01.wav` | SFX | mirelo | GENERATED | 10.0s |
 | E001_SFX_train_depart_v01 | `audio/sfx/E001_SFX_train_depart_v01.wav` | SFX | mirelo | GENERATED | 8.0s |
 | E001_SFX_wind_v01 | `audio/sfx/E001_SFX_wind_v01.wav` | SFX | local synth (numpy) | GENERATED | 60.0s |
+
+## v02 fix-pass assets (2026-11-09)
+
+| Asset ID | File path | Type | Tool / model | Status | Notes |
+|---|---|---|---|---|---|
+| E001_S02_SH06_KF_v02 | `images/keyframes/E001_S02_SH06_KF_v02.png` | Keyframe (edit) | gpt_image_2_6 medium | VERIFIED | Train on its rails (replaces v01: train on the platform) |
+| E001_S03_SH01_KF_v02 | `images/keyframes/E001_S03_SH01_KF_v02.png` | Keyframe (edit) | gpt_image_2_6 medium | VERIFIED | Ida has two arms (replaces v01: three arms) |
+| E001_S06_SH04_PLATE_KF_v01 | `images/keyframes/E001_S06_SH04_PLATE_KF_v01.png` | Plate (edit) | gpt_image_2_6 medium | VERIFIED | Empty track for the departure animation |
+| E001_S06_SH05_KF_v02 | `images/keyframes/E001_S06_SH05_KF_v02.png` | Keyframe (local composite) | `tools/grille_composite.py` | VERIFIED | Umbrella behind the original grille (aligned crossfade) |
+| E001_S09_SH02_KF_v02 | `images/keyframes/E001_S09_SH02_KF_v02.png` | Keyframe (local composite) | `tools/grille_composite.py` | VERIFIED | Whistle + glow behind the original grille |
+| E001_S07_SH01_CLIP_v02 | `clips/E001_S07_SH01_CLIP_v02.mp4` | Clip | grok_video_v15_lite 3 s | VERIFIED | Theo talking; retimed to `theo_L020` |
+| E001_S07_SH03_CLIP_v01 | `clips/E001_S07_SH03_CLIP_v01.mp4` | Clip | grok_video_v15_lite 6 s | VERIFIED | Theo talking; 9 retimed pieces to `theo_L022` |
+| E001_S02_SH08_CLIP_v01 | `clips/E001_S02_SH08_CLIP_v01.mp4` | Clip | grok_video_v15_lite 3 s | VERIFIED | Theo and the watch; glasses stable |
+| E001_S06_SH04_ANIM_v01 | `clips/E001_S06_SH04_ANIM_v01.mp4` | Clip (local animation) | `tools/train_depart.py` | VERIFIED | On-track departure into the tunnel (replaces the U-turn clip) |
+| E001_SFX_drips_v02 | `audio/sfx/E001_SFX_drips_v02.wav` | SFX | local synth | GENERATED | No hiss bed |
+| E001_RENDER_review_v02 | `renders/E001_RENDER_review_v02.mp4` | Render | assemble.py | VERIFIED | qc-report.md v02 |
+| E001_RENDER_master_v02 | `renders/E001_RENDER_master_v02.mp4` (not committed) | Render | assemble.py | VERIFIED | Download only (210.7 MB) |
+
+Superseded (kept for the record, not used in v02): `E001_S02_SH06_KF_v01`, `E001_S03_SH01_KF_v01`, `E001_S06_SH05_KF_v01`, `E001_S09_SH02_KF_v01`,
+`E001_S07_SH01_CLIP_v01`, `E001_S06_SH04_CLIP_v01` (REJECTED: U-turn), `E001_SFX_roomtone_v01` and `E001_SFX_wind_v01` (REJECTED: heard as static).
+

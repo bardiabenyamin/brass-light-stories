@@ -1,5 +1,54 @@
 # QC report — EPISODE-001 "The Early Shelf" (Prompt 10)
 
+## v02 (fix pass, 2026-11-09): current
+
+Render: `renders/E001_RENDER_review_v02.mp4` (committed, 86.7 MB) · master `renders/E001_RENDER_master_v02.mp4` (210.7 MB, CRF 16:
+not committed (> 95 MB), delivered as a download; rebuildable with `python3 tools/assemble.py`).
+**Status: ROUGH CUT v02 FOR OWNER REVIEW (not final).** The owner's 8 defects in v01 are fixed and verified below. It is still a
+mostly-stills animatic with 18 animated shots; see "What v02 still is not".
+
+### Owner's v01 defects: verification in v02
+
+| # | v01 time | Defect | Fix | Verified how (v02) | Result |
+|---|---|---|---|---|---|
+| 1 | 0:20–0:23 | Arrival train drifts off the rails into the building | Only the on-track first 1.4 s of the clip, slowed | 12 frames every 0.25 s, 0:19.0–0:21.9 | PASS: on the rails throughout |
+| 2 | 0:43–0:47 | Train standing on the platform | Keyframe edit v02: straight platform edge, rails under the whole train | Frames 0:43.5–0:47.0 | PASS |
+| 3 | 1:02–1:07 | Ida has three arms | Keyframe edit v02: two arms | Frames 1:02–1:09 + zoom on the keyframe | PASS |
+| 4 | 3:06–3:11 | Departure train U-turns into nothing | Local cutout animation along the train's own wheel line into the tunnel | 12 frames every 0.45 s, 3:05.7–3:10.8 | PASS: the train exits along the track into the tunnel; the umbrella stays still |
+| 5 | 3:20–3:23 | Theo's mouth not moving | New talking clip, retimed to our voice line | Face crops every 0.3 s: mouth open during 3:19.85–3:21.25 (the line), closed after | PASS (phrase-level sync, not phoneme-exact) |
+| 6 | 3:28–3:36 | Theo's mouth not moving | New 6 s talking clip, 4 speech bursts mapped to the 4 phrases (9 retimed pieces) | Face crops every 0.4 s: mouth moves in each phrase and closes in each pause | PASS (phrase-level) |
+| 7 | 4:22–4:29 | Grille wires disappear around the glowing whistle | Composite: whistle + glow placed behind the original, unchanged grille (same fix applied to the umbrella vanish at 3:11) | 12 frames every 0.6 s on the grille | PASS: lattice complete through the crossfade |
+| 8 | whole video | Constant static | It was my synthesized room-tone, wind and rain-hiss beds: removed. Drips regenerated without hiss | Edit list has no noise beds; silencedetect (-50 dB) finds only the two intended pauses (4:15.5–4:17.9, 4:45.2–4:48.4) | PASS |
+
+Also restaged in v02: every remaining line that played over the speaker's own still face (Wren and Ida in S03, S04, S08) is now heard
+over the listener, the shelf, the ledger, or Ida's key (shot / reverse shot). Verified on frame sheets of S04 and S08.
+Added animation: Theo with his watch (0:53–0:59), followed by a clock cutaway.
+
+### Technical spec (v02)
+
+| Check | Result | Status |
+|---|---|---|
+| Video / audio | H.264 1920×1080 30 fps yuv420p · AAC 48 kHz stereo | PASS |
+| Runtime | 4:53.3 (293.31 s; matches the edit list to the frame) | PASS |
+| Loudness | -15.6 LUFS integrated, LRA 7.2 LU, peak -1.3 dBFS | PASS |
+| Black / freeze | Title card, one scene fade, cut to black + end card (all intended) | PASS |
+| Committed size | 86.7 MB (< 95 MB) | PASS |
+
+### What v02 still is not (honest limits)
+
+- **Not fully animated.** 18 shots move, counting reuses (AI clips from v01 and v02, 4 reused from the proof-of-work, and the local
+  train animation); the rest are stills with camera moves. Full animation of a 5-minute episode needs roughly 150–250 more
+  credits at current prices (1 credit per second of clip, with retries). The balance is 0.72.
+- **Lip-sync is phrase-level** on Theo's two shots only. Everyone else's lines are staged off-face by design.
+- **Voices still not human-audited** (pronunciation of "Larkspur" and "Nora"; casting of Vera and Archie).
+- Stills are 1344 px upscaled to 1080p; a few deep crops are soft (S03 Wren close crop, S07 shelf crop, S02 clock cutaway).
+- Commercial-use rights for the Higgsfield outputs are not yet verified by the owner.
+
+---
+
+## v01 (first review cut): superseded
+
+
 Render under review: `renders/E001_RENDER_review_v01.mp4` (committed, 86.8 MB) · master `renders/E001_RENDER_master_v01.mp4`
 (211 MB, CRF 16: **not committed** (over the 95 MB limit), delivered as a download; rebuildable with `python3 tools/assemble.py`).
 Checked 2026-11-09 with `tools/qc.py` (ffprobe, EBU R128, blackdetect, freezedetect, silencedetect, one frame per shot on contact sheets) plus targeted frame pulls.

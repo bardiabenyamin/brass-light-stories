@@ -1,6 +1,6 @@
 # PLAN — EPISODE-001 (and Season 1 production control)
 
-Last updated: 2026-11-09 · Current stage: **Episode 1 FIX PASS (v02) in progress** after owner review of v01 (8 defects reported) (Prompts 04 → 10 done tonight; Shorts and YouTube package tomorrow)
+Last updated: 2026-11-09 · Current stage: **Episode 1 ROUGH CUT v02 built and QC'd: NEEDS OWNER REVIEW** (all 8 owner defects from v01 fixed and verified; not final) (Prompts 04 → 10 done tonight; Shorts and YouTube package tomorrow)
 
 > **SERIES GATE: APPROVED 2026-11-09.** Proof-of-work: **done** (44.6 credits). **Episode 1 spend: APPROVED** by the owner
 > ("Episode 1 spend cap: as needed but spent wisely", free starter plan) and **spent: 83.58 credits** (balance 97.8 → 14.22).

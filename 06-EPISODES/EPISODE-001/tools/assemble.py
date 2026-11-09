@@ -130,7 +130,8 @@ SC.append(("S07", pieces(CLv("S07_SH01", "v02"), [(0.0, 0.15, 1.0), (0.15, 1.95,
     still(KF("S07_SH04"), 1.7, (1.0, 1.06), (0.5, 0.6)),
     still(KF("S06_SH05", "v02"), 2.7, (1.35, 1.42), (0.5, 0.78))],
   [sfx(DRIPS, 0.0, -10, dur=4.0, fout=1.0),
-   vo("theo_L020", 0.10), vo("narr_L021", 4.3), vo("theo_L022", 9.10), vo("narr_L023", 17.0)]))
+   vo("theo_L020", 0.10), vo("narr_L021", 4.3), vo("theo_L022", 9.10), vo("narr_L023", 17.0),
+   mus(MID, 15.5, 9.5, 30.0, -22, 2.0, 2.5)]))   # v02: carries the recognition beat into S08 (no dead air without the old noise bed)
 EDL_TAIL = T / "edl_tail.py"   # S08, S09 and the end card are appended from this file once their lines are measured
 exec(EDL_TAIL.read_text())
 
