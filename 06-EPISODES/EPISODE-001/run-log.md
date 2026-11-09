@@ -141,3 +141,27 @@ Budget: owner's "as needed but spent wisely" on the free starter plan, so the wo
 5. grok clips that push in will 'improve' small props (the 5 cm whistle grew into a recorder). For prop-critical shots, prompt 'camera holds still' and trim.
 6. seed_audio bills per job in 0.1 steps: about 0.039 per word overall. Short single-line jobs cost relatively more.
 7. Slowed clips need motion interpolation (minterpolate) or they stutter. It is single-threaded, so render segments in parallel.
+
+## Fix pass v02 (owner QC of review v01, 2026-11-09)
+
+Owner reported 8 defects and approved spending the remaining balance: "Use the remaining balance credits to animate as much as you can. And to perfect the video in every scene."
+
+| # | Defect (owner time code) | Cause found | Fix | Credits | Job ID / tool |
+|---|---|---|---|---|---|
+| 1 | Arrival train drifts into the building (0:20–0:23) | grok clip leaves the rails after 1.4 s of source | Use only source 0–1.4 s (on the rails), slowed to 0.5× | 0 | edit list |
+| 2 | Train on the platform (0:43–0:47) | Keyframe S02_SH06: paving wraps under the train's front | AI edit: straight platform edge, rails under the whole train → `E001_S02_SH06_KF_v02.png` | 0.5 | `f36ff259-67f2-401c-85d3-d6a3c335b252` |
+| 3 | Ida has three arms (1:02–1:07) | Keyframe S03_SH01: pointing arm + two hanging arms (missed in my QC) | AI edit: exactly two arms → `E001_S03_SH01_KF_v02.png` | 0.5 | `4a63d88f-e63d-406a-9830-665082d90f58` |
+| 4 | Departure train U-turns into nothing (3:06–3:11) | grok clip turns the train around after 1.5 s | Empty-track plate (AI edit) + **local cutout animation**: the train slides along its own wheel line into the tunnel (`tools/train_depart.py` → `clips/E001_S06_SH04_ANIM_v01.mp4`) | 0.5 | `d1b294b1-3181-4243-81f4-133aa2964e55` |
+| 5 | Theo's mouth not moving (3:20–3:23) | Still/clip without speech | New 3 s talking clip with the exact line in the prompt; retimed piecewise so its speech bursts match our voice line → `E001_S07_SH01_CLIP_v02.mp4` | 3 | `816ad223-8fe7-403c-97e5-c8673486f078` |
+| 6 | Theo's mouth not moving (3:28–3:36) | Still image under a 7 s line | New 6 s talking clip; its 4 speech bursts mapped to the 4 phrases of our line (9 retimed pieces) → `E001_S07_SH03_CLIP_v01.mp4` | 6 | `4844f5b0-391e-4de4-93ce-db638f73e4c1` |
+| 7 | Grille wires disappear (4:22–4:29) | The whistle edit re-rendered the grille about 1 px off and left a hole in the wires; the crossfade dissolved two misaligned grilles | **Local composite** (`tools/grille_composite.py`): object + light taken from the edit, original wires redrawn in front → `E001_S09_SH02_KF_v02.png`; same fix for the umbrella vanish → `E001_S06_SH05_KF_v02.png` | 0 | local |
+| 8 | Static in every scene | My synthesized room-tone, wind and rain-hiss beds (constant noise at about -30 dB) | Beds removed; drips regenerated without hiss (`E001_SFX_drips_v02.wav`) | 0 | local |
+| + | "Animate as much as you can" | Longest static shot: Theo with the watch (8.5 s) | 3 s clip, slowed + a clock cutaway → `E001_S02_SH08_CLIP_v01.mp4` | 3 | `c6f7a926-b414-4aab-a0d9-4ae4337b5d89` |
+| + | Every other still face that "spoke" (Wren and Ida in S03, S04, S08) | Lines played over the speaker's still face | Restaged: each line is heard over the listener (shot / reverse shot), the shelf, the ledger or Ida's key | 0 | edit list |
+
+Lip-sync alternatives priced and rejected: sync_so lip-sync 10.8 credits for 3 s; grok_video_v15 (full) 7.5 credits for 3 s.
+
+**Fix-pass spend: 13.5 credits** (balance 14.22 → **0.72**, checked). Paid tools re-blocked (35 deny entries) right after.
+
+Inspection of the new assets: both Theo clips: mouth visibly forms speech shapes; glasses, curls, and coat stable; staircase intact. Watch clip: glasses stay on in every sampled frame. Edits: two arms (zoom-checked); rails under the whole train; the plate is clean. Composites: complete lattice in front of the whistle and the umbrella, pixel-identical to the empty-shelf frame outside the object.
+

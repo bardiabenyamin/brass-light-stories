@@ -60,14 +60,14 @@ def tick(level=.5):
     t = np.arange(int(.09 * SR)) / SR
     return level * np.sin(2 * np.pi * 1900 * t) * np.exp(-70 * t)
 
-def drips(dur=30.0, rate=1.6, level=.25):
+def drips(dur=30.0, rate=1.6, level=.25, rain=.05):
     x = np.zeros(int(dur * SR)); n = int(dur * rate)
     for s in rng.uniform(0, dur - .2, n):
         t = np.arange(int(.06 * SR)) / SR; f = rng.uniform(900, 1700)
         d = np.sin(2 * np.pi * f * t * (1 + 2.5 * t)) * np.exp(-60 * t) * rng.uniform(.3, 1)
         i = int(s * SR); x[i:i + len(d)] += d
-    rain = lowpass(rng.standard_normal(len(x)), 1800) * .05
-    return reverb(x * level + rain, .2)
+    noise = lowpass(rng.standard_normal(len(x)), 1800) * rain if rain else 0
+    return reverb(x * level + noise, .2)
 
 def tone(dur, fc=400, level=.04):
     return lowpass(rng.standard_normal(int(dur * SR)), fc) * level * 8
@@ -77,6 +77,8 @@ if __name__ == "__main__":
     save(OUT / "sfx/E001_SFX_bell_v01.wav", bell())
     save(OUT / "sfx/E001_SFX_shimmer_v01.wav", shimmer())
     save(OUT / "sfx/E001_SFX_tick_v01.wav", tick())
-    save(OUT / "sfx/E001_SFX_drips_v01.wav", drips())
+    if not (OUT / "sfx/E001_SFX_drips_v01.wav").exists(): save(OUT / "sfx/E001_SFX_drips_v01.wav", drips())
+    # v02 (owner QC, v01 review): no hiss bed. The constant noise read as static
+    save(OUT / "sfx/E001_SFX_drips_v02.wav", drips(rain=0, level=.3))
     save(OUT / "sfx/E001_SFX_roomtone_v01.wav", tone(60, 300, .03))
     save(OUT / "sfx/E001_SFX_wind_v01.wav", tone(60, 700, .025) * (0.7 + 0.3 * np.sin(2 * np.pi * 0.07 * np.arange(60 * SR) / SR)))

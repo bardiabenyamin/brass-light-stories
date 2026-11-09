@@ -40,6 +40,16 @@ def mus(f, at, dur, inn=0.0, gain=-18.0, fin=2.0, fout=2.0, duck=True): return d
 def bed(f, at, dur, gain=-6.0, fin=1.0, fout=1.0): return dict(k="mus", f=f, at=at, dur=dur, inn=0.0, gain=gain, fin=fin, fout=fout, duck=False, loop=True)
 
 MID, WARM = MUS("midnight"), MUS("warm")
+def CLv(s, v): return EP / f"clips/E001_{s}_CLIP_{v}.mp4"
+def pieces(src, plan, crop=GROK, fin=0):
+    """Retime one clip piece by piece (a, b, speed[, hold]) so its phrasing lines up with our dialogue."""
+    out = []
+    for i, p in enumerate(plan):
+        a, b, sp = p[:3]; hold = p[3] if len(p) > 3 else 0.0
+        out.append(clip(src, a, b, sp, crop=crop, hold=hold, fin=fin if i == 0 else 0))
+    return out
+DRIPS = SFX("drips").with_name("E001_SFX_drips_v02.wav")   # v02: no hiss bed (owner QC v01: "static")
+# v02 sound policy (owner QC v01): no constant noise beds (room tone, wind, rain hiss were heard as static).
 SC = []
 # S01 cold open: Monday midnight (reuses POW-001 assets)
 SC.append(("S01", [
@@ -49,46 +59,47 @@ SC.append(("S01", [
     card(["THE EARLY SHELF", "Episode 1"], 4.0)],
   [sfx(SFX("tick"), 0.0, -4), sfx(SFX("tick"), 1.0, -4), sfx(SFX("bell"), 1.5, -2),
    vo("narr_L000", 3.6), sfx(SFX("shimmer"), 9.3, -2),
-   mus(MID, 0.0, 19.0, 0.0, -17, 2.0, 3.0), bed(SFX("wind"), 3.0, 5.0, -10)]))
+   mus(MID, 0.0, 19.0, 0.0, -17, 2.0, 3.0)]))
 # S02 platform, Monday 6:14, golden hour
 SC.append(("S02", [
-    clip(CL("S02_SH01"), 0, 3.2, 0.8, fin=0.4),
-    clip(CL("S02_SH02"), 0, 3.0, 0.8),
-    still(KF("S02_SH03", "v02"), 8.25, (1.0, 1.22), (0.49, 0.36)),
+    clip(CL("S02_SH01"), 0, 1.4, 0.5, fin=0.4),     # v02: only the on-track part of the arrival (owner QC: drifted off the rails after 1.4 s)
+    clip(CL("S02_SH02"), 0, 3.0, 0.6),
+    still(KF("S02_SH03", "v02"), 8.2, (1.0, 1.22), (0.49, 0.36)),
     still(KF("S02_SH04"), 5.0, (1.0, 1.08), (0.5, 0.4)),
     still(KF("S02_SH05"), 3.0, (1.02, 1.08), (0.45, 0.4)),
-    still(KF("S02_SH06"), 4.5, (1.0, 1.06), (0.5, 0.5)),
+    still(KF("S02_SH06", "v02"), 4.5, (1.0, 1.06), (0.5, 0.5)),   # v02: train on its rails
     clip(CL("S02_SH07"), 0, 3.0, 0.5),
-    still(KF("S02_SH08"), 8.5, (1.0, 1.12), (0.32, 0.4))],
-  [sfx(SFX("train_arrive"), 0.0, -4), bed(SFX("wind"), 0, 43.0, -8),
+    clip(CL("S02_SH08"), 0, 3.0, 0.5),                # v02: Theo animated (glances at the watch, looks up)
+    still(KF("S02_SH03", "v02"), 2.5, (1.6, 1.72), (0.49, 0.35))],   # cutaway to the clock: "like one of them was lying"
+  [sfx(SFX("train_arrive"), 0.0, -4),
    vo("narr_L001", 1.0), vo("ida_L002", 21.6), vo("narr_L003", 24.5),
    mus(WARM, 0.5, 42.5, 0.0, -16, 3.0, 3.0)]))
 # S03 office, Monday evening, lamplight
 SC.append(("S03", [
-    still(KF("S03_SH01"), 7.5, (1.0, 1.08), (0.5, 0.5), fin=0.5),
+    still(KF("S03_SH01", "v02"), 7.5, (1.0, 1.08), (0.5, 0.5), fin=0.5),   # v02: Ida has two arms
     still(KF("S03_SH02"), 7.5, (1.15, 1.15), (0.42, 0.5), (0.58, 0.5)),
-    still(KF("S03_SH03"), 9.2, (1.0, 1.12), (0.45, 0.5)),
-    still(KF("S03_SH04"), 3.2, (1.0, 1.05), (0.6, 0.4)),
+    still(KF("S03_SH03"), 10.4, (1.0, 1.14), (0.45, 0.5)),     # Wren's "What's that for?" is heard over the ledger
+    still(KF("S03_SH04"), 2.0, (1.0, 1.04), (0.6, 0.4)),       # Wren listens: "Mending."
     still(KF("S03_SH05"), 2.5, (1.0, 1.08), (0.5, 0.8)),
     clip(CL("S03_SH06"), 0, 3.0, 0.72),
     still(KF("S03_SH04"), 6.53, (1.3, 1.42), (0.62, 0.33), fout=0.7)],
-  [bed(SFX("roomtone"), 0, 40.6, -6),
-   vo("ida_L004", 0.9, inn=1.0), vo("narr_L005", 7.8), vo("wren_L006", 24.6), vo("ida_L007", 26.0, inn=0.85),
+  [vo("ida_L004", 0.9, inn=1.0), vo("narr_L005", 7.8), vo("wren_L006", 24.6), vo("ida_L007", 26.0, inn=0.85),
    vo("wren_L008", 27.7), vo("ida_L009", 30.2), vo("narr_L010", 34.6),
    mus(WARM, 0.0, 30.0, 42.0, -19, 2.0, 4.0), mus(MID, 33.5, 7.1, 0.0, -21, 2.5, 1.5)]))
-# S04 kitchen, Monday night, lamplight ("Nora")
+# S04 kitchen, Monday night, lamplight ("Nora"); every line is heard over the listener
 SC.append(("S04", [
-    still(KF("S04_SH01"), 4.5, (1.0, 1.08), (0.5, 0.55), fin=0.6),
+    still(KF("S04_SH01"), 2.6, (1.0, 1.05), (0.5, 0.55), fin=0.6),
+    still(KF("S04_SH03"), 1.9, (1.0, 1.03), (0.5, 0.4)),
     still(KF("S04_SH02"), 2.8, (1.0, 1.05), (0.5, 0.45)),
-    still(KF("S04_SH03"), 5.3, (1.0, 1.08), (0.5, 0.4)),
+    still(KF("S04_SH03"), 5.3, (1.04, 1.1), (0.5, 0.4)),
     still(KF("S04_SH02"), 3.7, (1.15, 1.22), (0.45, 0.4), fout=0.8)],
-  [bed(SFX("roomtone"), 0, 16.3, -6)] + [sfx(SFX("tick"), t, -22) for t in np.arange(0.5, 16.0, 1.0)] +
-  [vo("ida_L011", 1.2, inn=1.6), vo("wren_L012", 4.9), vo("ida_L013", 7.8, inn=1.1), vo("narr_L014", 11.0)]))
+  [sfx(SFX("tick"), t, -28) for t in np.arange(0.5, 16.0, 1.0)] +
+  [vo("ida_L011", 2.8, inn=1.6), vo("wren_L012", 5.2), vo("ida_L013", 7.8, inn=1.1), vo("narr_L014", 11.0)]))
 # S05 kitchen -> hall -> office, Monday midnight (Mom's song; the umbrella arrives; Ida watches)
 SC.append(("S05", [
     still(KF("S05_SH01"), 6.0, (1.0, 1.12), (0.25, 0.45), fin=0.8),
     clip(CL("S05_SH01"), 0.2, 2.6, 0.4),   # QC v01: stop before the close-up where the whistle reads as a recorder
-    still(PKF("POW001_SH02_KF_v01"), 7.0, (1.08, 1.0), (0.5, 0.5)),   # the clock face at 11:59 while Mom's song plays; leads into the clip below
+    still(PKF("POW001_SH02_KF_v01"), 7.0, (1.08, 1.0), (0.5, 0.5)),   # the clock face at 11:59 while Mom's song plays
     clip(PCL("SH02"), 0, 1.5, crop=GROK, hold=1.5),
     still(KF("S05_SH02", "v02"), 4.0, (1.0, 1.15), (0.55, 0.6)),
     clip(PCL("SH05"), 0, 4.3, crop=POWC),
@@ -97,7 +108,7 @@ SC.append(("S05", [
     clip(PCL("SH06"), 0, 3.2, crop=POWC),
     clip(PCL("SH07"), 0, 5.0, crop="1120:630:0:37", fout=0.8),
     black(0.5)],
-  [bed(SFX("roomtone"), 0, 47.3, -6), vo("narr_L015", 0.6), mus(MUS("momsong"), 12.1, 10.0, 0.0, -3, 0.05, 1.0, duck=False),
+  [vo("narr_L015", 0.6), mus(MUS("momsong"), 12.1, 10.0, 0.0, -3, 0.05, 1.0, duck=False),
    sfx(SFX("tick"), 19.0, -6), sfx(SFX("tick"), 20.0, -6), sfx(SFX("bell"), 20.5, -2), vo("narr_L016", 21.1),
    vo("narr_L017", 26.4), sfx(SFX("shimmer"), 29.6, -3), mus(MID, 21.5, 25.8, 8.0, -18, 2.0, 2.0)]))
 # S06 platform, Tuesday 6:14 after rain; the umbrella is lost and its early copy vanishes (R2)
@@ -105,21 +116,21 @@ SC.append(("S06", [
     still(KF("S06_SH01"), 6.5, (1.0, 1.08), (0.5, 0.45), fin=0.8),
     still(KF("S06_SH02"), 7.0, (1.0, 1.06), (0.4, 0.5)),
     still(KF("S06_SH03"), 6.0, (1.0, 1.08), (0.6, 0.4)),
-    clip(CL("S06_SH04"), 0, 4.0, 0.8),
-    xf(KF("S06_SH05"), KF("S03_SH05"), 9.0, 1.5, 2.0, (1.0, 1.08), (0.5, 0.8), fout=0.6)],
-  [bed(SFX("drips"), 0, 24.5, -4), bed(SFX("wind"), 0, 24.5, -12), vo("narr_L018", 0.8), sfx(SFX("train_arrive"), 4.5, -12),
-   sfx(SFX("train_depart"), 19.5, -6), vo("narr_L019", 19.8), sfx(SFX("shimmer"), 25.6, -6), bed(SFX("roomtone"), 24.5, 9.0, -6),
+    clip(EP / "clips/E001_S06_SH04_ANIM_v01.mp4", 0, 5.0, 1.0, crop="1920:1080:0:0"),   # v02: local on-track animation
+    xf(KF("S06_SH05", "v02"), KF("S03_SH05"), 9.0, 1.5, 2.0, (1.0, 1.08), (0.5, 0.8), fout=0.6)],   # v02: one shared grille
+  [sfx(DRIPS, 0, -6, dur=24.5, fin=1.0, fout=1.5), vo("narr_L018", 0.8), sfx(SFX("train_arrive"), 4.5, -12),
+   sfx(SFX("train_depart"), 19.5, -6), vo("narr_L019", 19.8), sfx(SFX("shimmer"), 25.6, -6),
    mus(WARM, 0.0, 24.5, 10.0, -20, 2.0, 2.5)]))
-# S07 office, Tuesday evening: Theo hands it in
-SC.append(("S07", [
-    clip(CL("S07_SH01"), 0, 3.0, 0.75, fin=0.5),
-    still(KF("S07_SH02"), 5.0, (1.0, 1.06), (0.55, 0.4)),
-    still(KF("S07_SH03"), 8.0, (1.0, 1.08), (0.4, 0.45)),
+# S07 office, Tuesday evening: Theo hands it in. v02: Theo's mouth moves with his lines (talking clips retimed to our voice)
+SC.append(("S07", pieces(CLv("S07_SH01", "v02"), [(0.0, 0.15, 1.0), (0.15, 1.95, 1.2857), (1.95, 3.04, 0.4449)], fin=0.5) + [
+    still(KF("S07_SH02"), 5.0, (1.0, 1.06), (0.55, 0.4))] +
+    pieces(CL("S07_SH03"), [(0.0, 0.10, 1.0), (0.10, 1.52, 0.8208), (1.52, 1.95, 0.8431), (1.95, 2.52, 1.0364), (2.52, 3.08, 0.8116),
+                            (3.08, 4.42, 0.7166), (4.42, 4.75, 0.4286), (4.75, 5.58, 0.7981), (5.58, 6.04, 1.0, 0.28)]) + [
     still(KF("S05_SH03"), 1.6, (1.15, 1.2), (0.55, 0.55)),
     still(KF("S07_SH04"), 1.7, (1.0, 1.06), (0.5, 0.6)),
-    still(KF("S06_SH05"), 2.7, (1.35, 1.42), (0.5, 0.78))],
-  [bed(SFX("roomtone"), 0, 23.0, -6), sfx(SFX("drips"), 0.0, -10, dur=4.0, fout=1.0),
-   vo("theo_L020", 0.6), vo("narr_L021", 4.3), vo("theo_L022", 9.3), vo("narr_L023", 17.0)]))
+    still(KF("S06_SH05", "v02"), 2.7, (1.35, 1.42), (0.5, 0.78))],
+  [sfx(DRIPS, 0.0, -10, dur=4.0, fout=1.0),
+   vo("theo_L020", 0.10), vo("narr_L021", 4.3), vo("theo_L022", 9.10), vo("narr_L023", 17.0)]))
 EDL_TAIL = T / "edl_tail.py"   # S08, S09 and the end card are appended from this file once their lines are measured
 exec(EDL_TAIL.read_text())
 
@@ -249,7 +260,8 @@ if __name__ == "__main__":
     save_wav(TMP / "mix_raw.wav", m * 0.8)
     run(["ffmpeg", "-v", "error", "-y", "-i", str(TMP / "mix_raw.wav"), "-af", "loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000", "-ar", "48000", "-c:a", "pcm_s16le", str(TMP / "mix.wav")])
     json.dump({"scenes": marks, "vo": log, "total": total}, open(TMP / "timeline.json", "w"), indent=1)
-    master = EP / "renders/E001_RENDER_master_v01.mp4"; review = EP / "renders/E001_RENDER_review_v01.mp4"
+    VER = "v02"   # v01 = first review cut (owner QC: 8 defects); v02 = fix pass
+    master = EP / f"renders/E001_RENDER_master_{VER}.mp4"; review = EP / f"renders/E001_RENDER_review_{VER}.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-i", str(TMP / "picture.mp4"), "-i", str(TMP / "mix.wav"), "-map", "0:v:0", "-map", "1:a:0",
          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(master)])
     # review copy: 2-pass, about 2.2 Mb/s video so that ~5 min stays well under 95 MB

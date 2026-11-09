@@ -37,5 +37,6 @@ monetized upload.
 | 2026-11-09 | EPISODE-001 | Higgsfield | elevenlabs_music_v2 instrumental: 2 × 60 s | E001_MUS_warm_v01, E001_MUS_midnight_v01 | 7.68 | 0 | — | Owner, 2026-11-09 | |
 | 2026-11-09 | EPISODE-001 | Higgsfield | mirelo SFX: train arrival 10 s, departure 8 s | E001_SFX_train_arrive_v01, E001_SFX_train_depart_v01 | 4.5 | 0 | — | Owner, 2026-11-09 | Other SFX and Mom's song synthesized locally (free) |
 | 2026-11-09 | EPISODE-001 | local ffmpeg/numpy | Assembly, mix, loudness | E001_RENDER_master/review_v01 | 0 | — | — | — | |
+| 2026-11-09 | EPISODE-001 v02 fixes | Higgsfield | grok_video_v15_lite: 3 clips (Theo talking 3 s + 6 s, Theo watch 3 s); gpt_image_2_6 medium: 3 edits | E001_S07_SH01_CLIP_v02, E001_S07_SH03_CLIP_v01, E001_S02_SH08_CLIP_v01; E001_S03_SH01_KF_v02, E001_S02_SH06_KF_v02, E001_S06_SH04_PLATE_KF_v01 | 13.5 | 0 | — | Owner, 2026-11-09 ("Use the remaining balance credits to animate as much as you can") | Fix pass after owner QC of v01 |
 
-**Running total: 128.18 credits** (POW-001 44.6 + EPISODE-001 83.58). Balance 97.8 → **14.22** (expected; confirmed by `balance` after the run, see `06-EPISODES/EPISODE-001/run-log.md`). Rate-limited submissions were not charged.
+**Running total: 141.68 credits** (POW-001 44.6 + EPISODE-001 83.58 + v02 fixes 13.5). Balance 142.4 → 97.8 → 14.22 → **0.72** (each checked with `balance` and the transaction log). Rate-limited submissions were not charged.

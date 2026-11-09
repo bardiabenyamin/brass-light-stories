@@ -1,6 +1,6 @@
 # PLAN — EPISODE-001 (and Season 1 production control)
 
-Last updated: 2026-11-09 · Current stage: **Episode 1 review render v01 PASSED QC: NEEDS OWNER REVIEW** (Prompts 04 → 10 done tonight; Shorts and YouTube package tomorrow)
+Last updated: 2026-11-09 · Current stage: **Episode 1 FIX PASS (v02) in progress** after owner review of v01 (8 defects reported) (Prompts 04 → 10 done tonight; Shorts and YouTube package tomorrow)
 
 > **SERIES GATE: APPROVED 2026-11-09.** Proof-of-work: **done** (44.6 credits). **Episode 1 spend: APPROVED** by the owner
 > ("Episode 1 spend cap: as needed but spent wisely", free starter plan) and **spent: 83.58 credits** (balance 97.8 → 14.22).
@@ -188,3 +188,6 @@ and there is one warm practical per scene); the prop-glow rule was clarified (me
 | 2026-11-09 | Prompts 04–08: script, storyboard (EDL), dialogue, scenes, cliffhanger plan, 39 images, 9 clips, 33 voice jobs, 2 music beds, 2 SFX. **83.58 credits** (exact, from the transaction log; balance 14.22) | Approved ledger: `02-SERIES/_backups/cliffhanger-ledger.md.2026-11-09.bak`; `continuity.md` and `PLAN.md` copies in `_backups/` |
 | 2026-11-09 | Paid tools re-blocked after generation: deny list restored to 35 entries in both settings files | `_backups/settings.json.2026-11-09.bak` |
 | 2026-11-09 | Prompts 09–10: review render v01 assembled and QC'd (`qc-report.md`); drift and prop-scale defects fixed before delivery | — |
+| 2026-11-09 | **Owner review of v01: 8 defects reported** (arrival train off its track 0:20–0:23; train on the platform 0:43–0:47; Ida with three arms 1:02–1:07; departure train U-turn 3:06–3:11; Theo's mouth not moving 3:20–3:23 and 3:28–3:36; grille wires missing around the whistle 4:22–4:29; constant static). **Spend approval recorded:** owner, 2026-11-09: "Use the remaining balance credits to animate as much as you can. And to perfect the video in every scene." Scope: the remaining Higgsfield balance (14.22 credits). The same 6 generation entries removed from the deny list for this pass | `_backups/settings.json.2026-11-09.bak` |
+| 2026-11-09 | v02 fix pass: 13.5 credits (3 clips + 3 edits; balance 0.72), plus local fixes (grille composites, on-track departure animation, noise beds removed, all dialogue restaged over listeners). Paid tools re-blocked: 35 deny entries in both settings files | `_backups/settings.json.2026-11-09.bak` |
+

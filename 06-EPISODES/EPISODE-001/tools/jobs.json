@@ -84,5 +84,11 @@
  "A32": "8155bf70-ceda-466c-a7d4-9a70bc845699",
  "A33": "e6b104f4-ba36-4cda-9565-474067c164f2",
  "SFX_train_arrive": "4b58e28c-b967-4e12-b6bd-7fa7c0da177a",
- "SFX_train_depart": "7e46475c-45d2-4281-bb67-7b4447e01ac0"
+ "SFX_train_depart": "7e46475c-45d2-4281-bb67-7b4447e01ac0",
+ "S07_SH01_CLIP_v02": "816ad223-8fe7-403c-97e5-c8673486f078",
+ "S07_SH03_CLIP": "4844f5b0-391e-4de4-93ce-db638f73e4c1",
+ "S03_SH01_FIX": "4a63d88f-e63d-406a-9830-665082d90f58",
+ "S02_SH06_FIX": "f36ff259-67f2-401c-85d3-d6a3c335b252",
+ "S06_SH04_PLATE": "d1b294b1-3181-4243-81f4-133aa2964e55",
+ "S02_SH08_CLIP": "c6f7a926-b414-4aab-a0d9-4ae4337b5d89"
 }
