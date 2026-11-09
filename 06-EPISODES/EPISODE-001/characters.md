@@ -104,7 +104,7 @@ Wren Halloway, a 14-year-old girl, small and slim (shortest character, 152 cm), 
 | Colors | Apron bottle green `#2F5D46` · cardigan oatmeal `#D8CBB3` · blouse soft white `#F2EFE8` · skirt charcoal `#3B3D40` · boots dark brown `#4A3326` · cord dark red `#8E2B2B` · key brass `#B8893A` · thread red `#B0302B` |
 | Clothing I1 (day) | Soft white collared blouse · oatmeal knit cardigan with sleeves pushed to the elbows · long bottle-green canvas keeper's apron (bib, two deep front pockets, tied at the waist) · charcoal mid-calf wool skirt · dark-brown lace-up ankle boots |
 | Clothing I2 (night) | Bottle-green wool dressing gown over a long white nightdress · felt slippers · silver braid over her right shoulder · the key on its cord **if she is up**. While she sleeps it hangs on her bedside hook (where Wren takes it in Ep4) |
-| Accessories | **Small ornate brass key** (about 8 cm; the bow is cut in the shape of a larkspur flower) on a **dark red waxed cord**, worn outside the apron. A spool of red thread in the apron's right pocket (sometimes visible). No glasses, no other jewelry |
+| Accessories | **Small ornate brass key** (about 8 cm; the bow is a **round five-petal flower**, per the approved reference) on a **dark red waxed cord**, worn outside the apron. A spool of red thread in the apron's right pocket (sometimes visible). No glasses, no other jewelry |
 | Distinguishing | Silver low bun · grey-green eyes · bottle-green apron · brass key on a dark red cord |
 
 | Character | Specification |

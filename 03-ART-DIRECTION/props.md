@@ -21,7 +21,7 @@ Status: **LOCKED v1 — Prompt 03, 2026-11-09.** No prop images exist yet. The r
 |---|---|---|---|---|---|
 | `umbrella` | Yellow umbrella | Ep1 passenger | 1 | Long walking-stick umbrella, mustard-yellow canopy, 8 ribs, curved dark wooden J-handle. **A mended tear near one rib tip**, stitched in dark brown zigzag. **A small brass sparrow charm** on the wrist strap | Furled and strapped (it is never opened on screen) |
 | `whistle` | Brass pipe-whistle | Wren (from Nora) | 1–6 | About 5 cm, flared mouthpiece, **three finger holes**, worn patina, on a thin brass chain | Long chain → knotted short chain after Ep2; an identical early copy (Ep1–2) |
-| `idakey` | Ida's key | Ida → Wren (Ep6) | 1–6 | About 8 cm of ornate brass; the **bow is a stylized larkspur flower spike**; on a **dark red waxed cord** | Worn; on the bedside hook at night; given to Wren in Ep6 |
+| `idakey` | Ida's key | Ida → Wren (Ep6) | 1–6 | About 8 cm of ornate brass; the **bow is a round five-petal flower** (changed 2026-11-09 to match the approved Ida reference); on a **dark red waxed cord** | Worn; on the bedside hook at night; given to Wren in Ep6 |
 | `ledger` | Lost-and-found ledger | Office desk | 1–4 | A large book in faded bottle-green cloth with brown leather corners and spine. Rows of faint grey squiggles (**never legible**); **some rows stitched through with short red threads** (K1) | Open or closed; the photo tucked inside (Ep2) |
 | `redthread` | Spool of red thread | Ida's apron | 1–4 | A small wooden spool of red cotton with a steel needle pushed in | — |
 | `watch` | Theo's pocket watch | Theo | 1–6 | Round silver open face; fine engine-turned rim; **white enamel dial with baton markers and no numerals**; slim black hands; a small sub-dial; short silver chain with a T-bar | **Whole** (default) / **cracked crystal**: one diagonal crack and a chip (the Ep3 early copy only) |
@@ -65,7 +65,7 @@ sports whistle, pea whistle, silver whistle, more than three holes, recorder, fl
 ```
 
 ```prop idakey
-a small ornate brass key about eight centimeters long, its bow cut in the shape of a stylized larkspur flower spike with small florets, a slim round shank and a simple bit, warm worn patina, threaded on a dark red waxed cord
+a small ornate brass key about eight centimeters long, its bow cut in the shape of a round five-petal flower, a slim round shank and a simple bit, warm worn patina, threaded on a dark red waxed cord
 ```
 
 ```propneg idakey
@@ -213,3 +213,4 @@ lettering, numbers, logos, graffiti, modern high-speed train, steam engine, over
 | Date | Change |
 |---|---|
 | 2026-11-09 | v1 locked (Prompt 03) |
+| 2026-11-09 | `idakey` bow changed from the larkspur spike to a **round five-petal flower**, to match Ida v02, approved as canon by the owner (the model renders it reliably). Backup: `_backups/props.md.2026-11-09.bak` |

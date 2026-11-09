@@ -1,6 +1,6 @@
 # Location References — EPISODE-001
 
-Status: **1 image exists:** `E001_LOC_platform_midnight_wide_v01.png` (VERIFIED in POW-001, candidate canon: awaiting owner approval). The rest are PENDING and wait for the
+Status: **1 image exists:** `E001_LOC_platform_midnight_wide_v01.png` (**APPROVED AS CANON**, owner, 2026-11-09). The rest are PENDING and wait for the
 full-episode spend approval.
 
 Required per location: a wide establishing shot plus 1–2 working angles, and a lighting note per time of day used.

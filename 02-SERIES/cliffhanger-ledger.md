@@ -59,7 +59,7 @@ each entry against the written script; Prompt 13 confirms it before the next epi
 - Season-arc movement: Establishes the shelf and the rule whose price is the season question
 - Continuity dependencies: The whistle (brass pipe, three holes, thin chain); the grille latch; the umbrella (mended tear, bird charm); the 6:14 times; midnight chime
 - Audit: earned? Yes (the umbrella proves the rule first). Specific? Yes (one object, one owner, tomorrow). Paid off next episode? Yes, in the first 40 s. Distinct from recent hooks? First hook
-- Revision notes (dated): —
+- Revision notes (dated): 2026-11-09 (Prompt 05 audit, fast-track): status **WRITTEN + CUT (review render v01)**. Audit re-run against `script.md` and the cut: passes (see `06-EPISODES/EPISODE-001/cliffhanger-plan.md`). Timecodes in the cut: Abe and Ledger 0:47 · K1 red threads 1:18 · K6 key 1:32 (again 3:51) · K3 "Nora" 1:44 · K5 Mom's song 2:11 · K2 + K4 Theo 3:29–3:36 · final beat 4:28–4:45. **One staging change, flagged:** K5 is played at the kitchen's interior window (the clock face glowing beyond the glass) instead of a bedroom window. The bedroom isn't designed yet, and this ties the tune to the clock early. `PROPOSED — NEEDS APPROVAL`; reversible in a later episode. The early copy of the whistle arrives **without its chain** (consistent with the chain snapping in Ep2 and being re-knotted short).
 
 ### Episode 2 — Title: "The Keeper's Whistle"
 

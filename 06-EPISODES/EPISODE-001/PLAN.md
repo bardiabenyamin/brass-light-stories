@@ -1,10 +1,10 @@
 # PLAN — EPISODE-001 (and Season 1 production control)
 
-Last updated: 2026-11-09 · Current stage: **T1 proof-of-work DONE → waiting on owner decisions (canon refs, voice, Episode 1 budget); next text stage is Prompt 04**
+Last updated: 2026-11-09 · Current stage: **Episode 1 review render v01 built: owner review** (Prompts 04 → 10 done tonight; Shorts and YouTube package tomorrow)
 
-> **SERIES GATE: APPROVED 2026-11-09.** The proof-of-work is **done**: 44.6 credits, under the about-70 ceiling.
-> **Full-episode asset spend (Prompts 06–08) is NOT approved.** The paid tools are blocked again. Estimate for
-> Episode 1: about 405–495 credits (`04-TESTS/POW-001/report.md` §3); the balance is 97.8.
+> **SERIES GATE: APPROVED 2026-11-09.** Proof-of-work: **done** (44.6 credits). **Episode 1 spend: APPROVED** by the owner
+> ("Episode 1 spend cap: as needed but spent wisely", free starter plan) and **spent: 83.58 credits** (balance 97.8 → 14.22).
+> The paid tools were re-blocked after the run (deny list back to 35 entries).
 
 Status values: `DONE` (exists **and** checked; the "Checked how" column says how) · `PENDING` · `BLOCKED` ·
 `NEEDS APPROVAL`
@@ -26,7 +26,7 @@ Status values: `DONE` (exists **and** checked; the "Checked how" column says how
 | Roadmap and Episode 1 concept presented to the owner | DONE: chat summary 2026-11-09 |
 | **Owner's explicit approval recorded below** | **APPROVED 2026-11-09** |
 | Spend approval for the proof-of-work test | **APPROVED and USED:** 44.6 credits (2026-11-09) |
-| Spend approval for full Episode 1 assets (Prompts 06–08) | **NEEDS APPROVAL**: estimate about 405–495 credits (report §3); balance 97.8, so a top-up or bigger plan is needed |
+| Spend approval for full Episode 1 assets (Prompts 06–08) | **APPROVED 2026-11-09:** "as needed but spent wisely" within the free-plan balance (97.8 credits). Lean plan: low-cost images, as many still-with-camera-move shots as possible, and AI clips only for key moments |
 
 **Gate approval record** (owner's own words, 2026-11-09):
 
@@ -37,6 +37,11 @@ Status values: `DONE` (exists **and** checked; the "Checked how" column says how
 | 2026-11-09 | Channel name | "Channel name: Brass Light Stories." |
 | 2026-11-09 | Proof-of-work spend, after Prompt 03 | "Proof-of-work cap: use as needed credits, approved to spend after Prompt 03." |
 | 2026-11-09 | Scope of the next step | "run Prompt 02 (character bible) … Text and prompts only, no image generation yet." |
+| 2026-11-09 | **Canon references** | "Approve as canon: Wren v01, Ida v02, platform midnight v01." |
+| 2026-11-09 | **Episode 1 spend** | "Credits: [using free subscription]. Episode 1 spend cap: as needed but spent wisely credits." No top-up, so the working budget is **the remaining 97.8 credits** |
+| 2026-11-09 | **Fast-track Episode 1 tonight**; Shorts and YouTube package tomorrow | "Go: fast-track Episode 1 tonight. Shorts and YouTube package tomorrow." |
+| 2026-11-09 | Narrator delegated to Claude | "Narrator: [pick the one that best fits the storyline]." Claude chose **Annie** (222 Hz, the teen range; unhurried, intimate delivery that suits Wren's past-tense narration) |
+| 2026-11-09 | Key bow left open ("[round flower / larkspur spike]") | Claude decided on the **round five-petal flower**, the bow in the approved Ida v02 reference (reversible; dated note in `props.md`) |
 
 **Working ceiling for the proof-of-work (`PROPOSED`; the owner may override):** before submitting anything, Claude
 reads the tool's own price quote. If the whole test would cost more than about half the current balance (about 70 of
@@ -117,22 +122,22 @@ bedside hook while she sleeps, as the approved Ep4 roadmap requires (Wren takes 
 Two fixes made during the check: the platform-midnight office window is now dark (the office is unlit at midnight,
 and there is one warm practical per scene); the prop-glow rule was clarified (memory-objects glow permanently).
 
-### Next stages (series gate open; proof-of-work running)
+### Episode 1 stages (fast-track, 2026-11-09)
 
 | # | Stage (prompt) | Deliverables | Paid? | Status |
 |---|---|---|---|---|
 | 02 | Character bible | `characters.md`, `continuity.md`, `references/characters/README.md` (prompts only) | No | DONE (text); images PENDING |
 | 03 | Art direction and world | `03-ART-DIRECTION/visual-style.md`, `locations.md`, `props.md`, master and negative prompts | No | DONE (locked v1) |
 | T1 | Proof-of-work test (30–60 s) | `04-TESTS/POW-001/`: render, report, run log | **Yes** (44.6 credits) | **DONE**: render verified (ffprobe 1920×1080/30/H.264/48 kHz, 30.0 s, −16.4 LUFS; frame check). Every asset inspected against continuity §A/§A2/§A3 (run log) |
-| 04 | Script and storyboard | `script.md`, `dialogue.md`, `scenes.md`, `storyboard.md`, `continuity.md` | No | PENDING |
-| 05 | Cliffhanger chain audit | `cliffhanger-plan.md`, ledger entry | No | PENDING |
-| 06 | Character and scene images | `prompts.md`, `references/`, `images/keyframes/`, `assets.md` | **Yes** | BLOCKED (spend not yet approved). 3 refs already VERIFIED in POW-001, awaiting canon approval |
-| 07 | Animation clips | `animation-batch.md`, `clips/` | **Yes** | BLOCKED (spend not yet approved) |
-| 08 | Dialogue, music, SFX | `audio-cue-sheet.md`, `dialogue.md`, `audio/` | **Yes** | BLOCKED (spend not yet approved) |
-| 09 | Remotion assembly | `05-EDIT/` project, `renders/E001_RENDER_review_v01.mp4` | No (local) | BLOCKED |
-| 10 | QC and final render | `qc-report.md`, final render verified with ffprobe | Maybe (fixes) | BLOCKED |
-| 11 | Shorts | `shorts-plan.md`, `shorts/` | Maybe | BLOCKED |
-| 12 | YouTube package | `youtube.md` (no upload without explicit authorization) | No | BLOCKED |
+| 04 | Script and storyboard | `script.md`, `dialogue.md`, `scenes.md`, `storyboard.md`, `continuity.md` | No | **DONE**: storyboard generated from the edit decision list (62 shots, 4:53); script checks in `script.md`; continuity flags F1–F7 logged |
+| 05 | Cliffhanger chain audit | `cliffhanger-plan.md`, ledger entry | No | **DONE**: audit passes; ledger dated note added (approved ledger backed up first) |
+| 06 | Character and scene images | `prompts.md`, `references/`, `images/keyframes/`, `assets.md` | **Yes** (22.0) | **DONE**: 39 images, each inspected on contact sheets and zooms (run log); 2 failed and were fixed by edits. Theo front ref `PROPOSED — NEEDS APPROVAL` as canon |
+| 07 | Animation clips | `animation-batch.md`, `clips/` | **Yes** (31.0) | **DONE**: 9 clips, frame-sampled at start, mid, end; 2 trimmed (dust puffs; prop growth) |
+| 08 | Dialogue, music, SFX | `audio-cue-sheet.md`, `dialogue.md`, `audio/` | **Yes** (30.58) | **DONE (generated + measured)**: 33 voice jobs, 2 music beds, 2 SFX, local synth (Mom's song, bell, shimmer, drips, room tone). **Not listened to by a human: owner audition required** |
+| 09 | Assembly | `tools/assemble.py` (ffmpeg + numpy; Remotion not needed), `renders/E001_RENDER_review_v01.mp4` | No (local) | See `qc-report.md` |
+| 10 | QC and final render | `qc-report.md`, final render verified with ffprobe | Maybe (fixes) | See `qc-report.md`; 14.22 credits left for fixes |
+| 11 | Shorts | `shorts-plan.md`, `shorts/` | Maybe | PENDING (tomorrow, per owner) |
+| 12 | YouTube package | `youtube.md` (no upload without explicit authorization) | No | PENDING (tomorrow, per owner) |
 | 13 | Next episode | `EPISODE-002/` copied from the template, concept, cliffhanger plan, ledger | No | BLOCKED |
 
 ---
@@ -179,3 +184,7 @@ and there is one warm practical per scene); the prop-glow rule was clarified (me
 | 2026-11-09 | Prompt 03: `visual-style.md`, `locations.md`, `props.md`, `build_prompts.py`; prompts.md rebuilt (69 references); continuity §A3, timeline, screen direction, props; W2/I2 night blocks added to characters.md | None needed (no approved files changed) |
 | 2026-11-09 | Proof-of-work start: removed 6 deny entries (Higgsfield `generate_image`, `generate_video`, `generate_audio` and their `_batch` forms). **29 stay denied** (publishing, voice creation, upscale, presets, etc.) | `_backups/settings.json.2026-11-09.bak` |
 | 2026-11-09 | POW-001 complete (44.6 credits). **Deny list restored to all 35 entries** right after the run; full-episode spend is not approved | Restored from `_backups/settings.json.2026-11-09.bak` |
+| 2026-11-09 | Episode 1 fast-track start: the same 6 generation entries removed from the deny list (29 remain) under the owner's Episode 1 spend approval | `_backups/settings.json.2026-11-09.bak` (35 entries) |
+| 2026-11-09 | Prompts 04–08: script, storyboard (EDL), dialogue, scenes, cliffhanger plan, 39 images, 9 clips, 33 voice jobs, 2 music beds, 2 SFX. **83.58 credits** (exact, from the transaction log; balance 14.22) | Approved ledger: `02-SERIES/_backups/cliffhanger-ledger.md.2026-11-09.bak`; `continuity.md` and `PLAN.md` copies in `_backups/` |
+| 2026-11-09 | Paid tools re-blocked after generation: deny list restored to 35 entries in both settings files | `_backups/settings.json.2026-11-09.bak` |
+

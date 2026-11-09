@@ -1,6 +1,6 @@
 # Character References — series canon (held in EPISODE-001)
 
-Status: **2 of 32 exist (VERIFIED, candidate canon: awaiting owner approval).** 30 PENDING. Copy-ready prompts are written (`../../prompts.md` § "Character
+Status: **2 of 32 exist and are APPROVED AS CANON (owner, 2026-11-09).** 30 PENDING. Copy-ready prompts are written (`../../prompts.md` § "Character
 reference batch", CR-01 to CR-32). Generation is **on hold until Prompt 03 is complete** (owner instruction,
 2026-11-09). After that, only **Wren and Ida** are generated first, for the proof-of-work. Never list an image here as
 existing unless the file is in this folder.
@@ -11,9 +11,9 @@ Design source: `../../characters.md`. Inspection: `../../continuity.md` §A and 
 
 | Ref ID | Character | front | side | 34 | full | expr | Approved as canon |
 |---|---|---|---|---|---|---|---|
-| `wren` | Wren Halloway | **VERIFIED** `_v01` | PENDING | PENDING | PENDING | PENDING | Awaiting owner |
-| `ida` | Ida Halloway | **VERIFIED** `_v02` (v01 rejected: style) | PENDING | PENDING | PENDING | PENDING | Awaiting owner |
-| `theo` | Theo Marsh | PENDING | PENDING | PENDING | PENDING | PENDING | — |
+| `wren` | Wren Halloway | **APPROVED** `_v01` | PENDING | PENDING | PENDING | PENDING | **Canon 2026-11-09** |
+| `ida` | Ida Halloway | **APPROVED** `_v02` (v01 rejected: style) | PENDING | PENDING | PENDING | PENDING | **Canon 2026-11-09** |
+| `theo` | Theo Marsh | **VERIFIED** `_v01` (PROPOSED as canon) | PENDING | PENDING | PENDING | PENDING | — |
 | `crane` | Ansel Crane | PENDING | PENDING | PENDING | PENDING | PENDING | — |
 | `abe` | Abe Crane | PENDING | PENDING | PENDING | PENDING | PENDING | — |
 | `ledger` | Ledger (cat) | PENDING | PENDING | PENDING | PENDING | PENDING | — |

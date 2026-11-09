@@ -169,9 +169,31 @@ Scene-by-scene wardrobe is assigned in Prompt 04 from these states. No new outfi
 ### Emotional state by scene
 | Scene | Char ID | Enters as | Exits as |
 |---|---|---|---|
-| — | — | — | — |
+| S02 | wren | Guarded, a parcel sent away | Curious about the strange little station |
+| S03 | wren | Curious | Defiant ("I broke it the first night") |
+| S04 | wren | Settling in | Hurt and uneasy (called "Nora") |
+| S05 | wren | Lonely (Mom's song) | Awed; unaware she's watched |
+| S06–S07 | wren | Suspicious | Certain: the shelf shows tomorrow |
+| S08 | wren / ida | Accusing / unsurprised | Promise given / trust extended |
+| S09 | wren | Wonder | Dread |
+
+### Episode 1 build flags (2026-11-09, review render v01): PROPOSED — NEEDS APPROVAL
+| # | Flag | Where | Proposed resolution |
+|---|---|---|---|
+| F1 | The lost-and-found shelf wall **faces the hall door** in every E001 office shot (the location master says the left wall). Every office image is consistent with this | S03_SH01 and all office shots | Update `locations.md` office layout: the shelf wall faces the hall door, the window and desk are on the right, the stair is in the far left corner |
+| F2 | Mom's song (K5) is played at the **kitchen's interior window**, not a bedroom window (ledger wording) | S05 | Keep. It ties the tune to the clock; the bedroom isn't designed yet |
+| F3 | The whistle reads about 8–10 cm in the S05 clip close-up (canon: about 5 cm) | E001_S05_SH01_CLIP 2.5–3.6 s | Accept for v01; future whistle clips use 'camera holds still' and stills for close-ups |
+| F4 | The early copy on the shelf (S09_SH02/SH03) has a slightly flared horn shape; in the hands insert (S09_SH04) both copies are canon tubes | S09 | Accept: small in frame. If regenerated, use S09_SH04 as the prop reference |
+| F5 | The 6:14 clock hands are approximate (the hour hand is long) | S02_SH03 v02, S06_SH01 | Accept; reads as about 6:14 at a glance |
+| F6 | The early copy arrives **without its chain** | S09 | Consistent with Ep2 (the chain snaps; re-knotted short). Confirm in Ep2's script |
+| F7 | Ida's night look (I2) appears only in the POW-001 doorway clip; Ida is absent from the final beat as required | S05, S09 | — |
 
 ### Carried into Episode 2
 | Item | State at end of E001 |
 |---|---|
-| — | — |
+| Time | Wednesday 00:00–00:01, office, MIDNIGHT |
+| Wren | W2 (jacket over sleep shirt), kneeling at the open grille; real whistle on its long chain + early copy (no chain) in her hands |
+| Ida | Upstairs asleep (not shown in the final beat); enters in I2 in Ep2's opening |
+| Umbrella | Returned to the office by Theo (on the counter); the shelf copy is gone |
+| Promise | Given Tuesday evening: "never give anything back early" |
+| Clock | Gained a minute "again" Monday night (K2); Ep3 pays it off |
