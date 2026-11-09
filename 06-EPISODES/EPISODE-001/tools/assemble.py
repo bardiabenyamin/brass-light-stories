@@ -153,7 +153,7 @@ def render(i, s):
         mi = ",minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1" if slow else ",fps=30"
         hold = f",tpad=stop_mode=clone:stop_duration={s['hold']}" if s["hold"] else ""
         vf = (f"trim={s['a']}:{s['b']},setpts=(PTS-STARTPTS)/{s['speed']},crop={s['crop']},scale=1280:720:flags=lanczos{mi},"
-              f"scale=1920:1080:flags=lanczos,setsar=1{hold}{fades(s, n)}")
+              f"scale=1920:1080:flags=lanczos,setsar=1{hold},tpad=stop_mode=clone:stop_duration=1{fades(s, n)}")  # pad: interpolation drops 2-5 end frames
         run(["ffmpeg", "-v", "error", "-y", "-i", str(s["src"]), "-map", "0:v:0", "-vf", vf, "-frames:v", str(n)] + V + [str(out)])
     elif s["k"] == "xfade":
         a, b = TMP / f"seg_{h}a.mp4", TMP / f"seg_{h}b.mp4"
